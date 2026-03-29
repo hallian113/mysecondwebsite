@@ -12,7 +12,7 @@
 </head>
 <body class="bg-light">
 
-    <!-- Premium Navbar (Matches Index/Visa) -->
+    <!-- Premium Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
@@ -42,15 +42,16 @@
         </div>
     </header>
 
-    <!-- Booking Form Section -->
+    <!-- Booking Form & Info Section -->
     <section class="py-5">
-        <div class="container py-5 reveal-hidden">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="bg-white p-4 p-md-5 shadow-lg border-top border-primary border-4 main-img-wrapper">
-                        <div class="text-center mb-5">
-                            <h2 class="fw-bold">Flight & Hotel Quotation</h2>
-                            <p class="text-muted">Our Seoul-based experts will provide a custom quote within 2 hours.</p>
+        <div class="container py-5">
+            <div class="row g-5">
+                <!-- Left Side: The Form -->
+                <div class="col-lg-8 reveal-hidden">
+                    <div class="bg-white p-4 p-md-5 shadow-lg border-top border-primary border-4">
+                        <div class="mb-5">
+                            <h2 class="fw-bold">Request a Quotation</h2>
+                            <p class="text-muted">Direct access to premium airline inventory and luxury hotel blocks.</p>
                         </div>
                         
                         <form id="bookingForm">
@@ -62,7 +63,6 @@
                                         <input type="text" class="form-control border-0 bg-light p-3" placeholder="e.g. Seoul (ICN)" required>
                                     </div>
                                 </div>
-                                
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold tracking-widest">DESTINATION CITY</label>
                                     <div class="input-group">
@@ -70,65 +70,111 @@
                                         <input type="text" class="form-control border-0 bg-light p-3" placeholder="e.g. London (LHR)" required>
                                     </div>
                                 </div>
-
                                 <div class="col-md-4">
                                     <label class="form-label small fw-bold tracking-widest">TRAVEL DATE</label>
                                     <input type="date" class="form-control border-0 bg-light p-3" required>
                                 </div>
-
                                 <div class="col-md-4">
                                     <label class="form-label small fw-bold tracking-widest">PASSENGERS</label>
-                                    <select class="form-select border-0 bg-light p-3">
+                                    <select class="form-select border-0 bg-light p-3 shadow-none">
                                         <option value="1">1 Passenger</option>
                                         <option value="2">2 Passengers</option>
                                         <option value="3+">3+ Passengers</option>
                                     </select>
                                 </div>
-
                                 <div class="col-md-4">
                                     <label class="form-label small fw-bold tracking-widest">CABIN CLASS</label>
-                                    <select class="form-select border-0 bg-light p-3">
+                                    <select class="form-select border-0 bg-light p-3 shadow-none">
                                         <option>Economy</option>
-                                        <option>Business</option>
+                                        <option>Premium Economy</option>
+                                        <option>Business Class</option>
                                         <option>First Class</option>
                                     </select>
                                 </div>
-
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold tracking-widest">CONTACT EMAIL / KAKAO ID</label>
+                                    <input type="text" class="form-control border-0 bg-light p-3" placeholder="How should we send the quote?" required>
+                                </div>
                                 <div class="col-12 mt-5">
-                                    <button type="submit" class="btn btn-primary w-100 py-3 fw-bold tracking-widest">
-                                        REQUEST QUOTE <i class="bi bi-arrow-right ms-2"></i>
+                                    <button type="submit" class="btn btn-primary w-100 py-3 fw-bold tracking-widest rounded-0">
+                                        GET CUSTOM QUOTE <i class="bi bi-arrow-right ms-2"></i>
                                     </button>
                                 </div>
                             </div>
                         </form>
                     </div>
+                </div>
 
-                    <!-- Trust Badges -->
-                    <div class="row mt-5 text-center g-4">
-                        <div class="col-md-4">
-                            <i class="bi bi-shield-check text-primary fs-2"></i>
-                            <h6 class="fw-bold mt-2">Secure Booking</h6>
-                            <p class="small text-muted">Your travel data is protected by global privacy standards.</p>
+                <!-- Right Side: Contact Sidebar -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm p-4 bg-navy text-white mb-4">
+                        <h5 class="fw-bold mb-3">Priority Booking</h5>
+                        <p class="small text-white-50">Need a ticket issued within the hour? Contact our emergency desk.</p>
+                        <hr class="border-secondary">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-whatsapp text-primary fs-4 me-3"></i>
+                            <div>
+                                <p class="mb-0 small text-white-50">WhatsApp</p>
+                                <span class="fw-bold">+82 10-XXXX-XXXX</span>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <i class="bi bi-headset text-primary fs-2"></i>
-                            <h6 class="fw-bold mt-2">24/7 Support</h6>
-                            <p class="small text-muted">Direct assistance via Phone or KakaoTalk anytime.</p>
-                        </div>
-                        <div class="col-md-4">
-                            <i class="bi bi-lightning-charge text-primary fs-2"></i>
-                            <h6 class="fw-bold mt-2">Fast Response</h6>
-                            <p class="small text-muted">Receive itinerary options in less than 2 hours.</p>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-chat-dots text-primary fs-4 me-3"></i>
+                            <div>
+                                <p class="mb-0 small text-white-50">KakaoTalk ID</p>
+                                <span class="fw-bold">EttehadTravelsKR</span>
+                            </div>
                         </div>
                     </div>
 
+                    <div class="bg-white p-4 shadow-sm border-start border-primary border-4">
+                        <h6 class="fw-bold text-uppercase tracking-widest small">Our Promise</h6>
+                        <ul class="list-unstyled mt-3 mb-0">
+                            <li class="mb-3 small d-flex"><i class="bi bi-check2-circle text-primary me-2"></i> No Hidden Service Fees</li>
+                            <li class="mb-3 small d-flex"><i class="bi bi-check2-circle text-primary me-2"></i> Real-time Flight Monitoring</li>
+                            <li class="small d-flex"><i class="bi bi-check2-circle text-primary me-2"></i> Seamless Visa Integration</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer (Matches Index/Visa) -->
-   <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
+    <!-- Specialty Services Grid -->
+    <section class="py-5 bg-white">
+        <div class="container py-5 reveal-hidden">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold">Beyond Flight Tickets</h2>
+                <div class="bg-primary mx-auto mt-3" style="height: 3px; width: 50px;"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-4 border h-100 hover-shadow transition">
+                        <i class="bi bi-building text-primary fs-1 mb-3 d-block"></i>
+                        <h5 class="fw-bold">Hotel Collection</h5>
+                        <p class="small text-muted">Access to corporate rates at 5-star properties in London, Paris, and Dubai.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border h-100 hover-shadow transition">
+                        <i class="bi bi-people text-primary fs-1 mb-3 d-block"></i>
+                        <h5 class="fw-bold">Group Travel</h5>
+                        <p class="small text-muted">Managed logistics for corporate teams or large family delegations.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border h-100 hover-shadow transition">
+                        <i class="bi bi-car-front text-primary fs-1 mb-3 d-block"></i>
+                        <h5 class="fw-bold">Global Transfers</h5>
+                        <p class="small text-muted">Chauffeur services and airport pickups globally, booked in Seoul.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
@@ -146,7 +192,7 @@
                         <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
                         <li class="mb-2"><a href="visa.html" class="text-white-50 text-decoration-none">Visas</a></li>
                         <li class="mb-2"><a href="booking.html" class="text-white-50 text-decoration-none">Bookings</a></li>
-                         <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-4">
@@ -171,11 +217,9 @@
         </div>
     </footer>
 
-
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Scroll Reveal logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -185,10 +229,9 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal-hidden').forEach(el => observer.observe(el));
 
-        // Form Submission logic
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert("Inquiry Received! Our Seoul office will review your route and send the best pricing to your email shortly.");
+            alert("Inquiry Received! Our Seoul office will review your route and send the best pricing to your contact shortly.");
             this.reset();
         });
     </script>
