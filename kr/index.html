@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에테하드 여행사 | 서울 프리미엄 비자 및 여행 컨시어지</title>
+    
+    <!-- SEO & Localization -->
+    <link rel="alternate" hreflang="en" href="../index.html" />
+    <link rel="alternate" hreflang="ko" href="index.html" />
+    <link rel="alternate" hreflang="zh" href="../zh/index.html" />
+    <link rel="alternate" hreflang="ar" href="../ar/index.html" />
+
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        /* Flag Switcher Styling */
+        .flag-link { transition: all 0.3s ease; display: inline-block; margin: 0 6px; filter: grayscale(20%); }
+        .flag-link:hover { filter: grayscale(0%); transform: scale(1.15); }
+        .flag-icon { width: 24px; height: 16px; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); vertical-align: middle; }
+        .flag-active { border: 2px solid #0d6efd; padding: 1px; filter: grayscale(0%); }
+        
+        .hero-premium { background-position: center !important; }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Premium Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="../assets/ettehad.png" alt="Ettehad Travels" height="40" class="me-2">
+                <span class="fw-bold">ETTEHAD<span class="text-primary"> TRAVELS</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">홈</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visa.html">비자 서비스</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">예약</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">고객 센터</a></li>
+                    
+                    <!-- Flag Language Switcher -->
+                    <li class="nav-item ms-lg-4 d-flex align-items-center mt-3 mt-lg-0">
+                        <a href="../index.html" class="flag-link" title="English">
+                            <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="English">
+                        </a>
+                        <a href="index.html" class="flag-link" title="한국어">
+                            <img src="https://flagcdn.com/w40/kr.png" class="flag-icon flag-active" alt="Korean">
+                        </a>
+                        <a href="../zh/index.html" class="flag-link" title="简体中文">
+                            <img src="https://flagcdn.com/w40/cn.png" class="flag-icon" alt="Chinese">
+                        </a>
+                        <a href="../ar/index.html" class="flag-link" title="العربية">
+                            <img src="https://flagcdn.com/w40/sa.png" class="flag-icon" alt="Arabic">
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="contact.html" class="btn btn-primary btn-sm px-4 rounded-0 fw-bold">상담 예약하기</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-premium d-flex align-items-center">
+        <div class="sky-overlay"></div>
+        
+        <div class="airplane-container">
+            <img src="../assets/plane.png" alt="Travel" class="airplane">
+        </div>
+
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    <span class="text-uppercase tracking-widest text-primary mb-3 d-block fw-bold animate-fadeIn">세계로 향하는 서울의 프리미엄 관문</span>
+                    <h1 class="display-2 text-white mb-4 fw-bold">당신의 여행 경험을<br>한 단계 더 높이세요.</h1>
+                    <p class="lead text-white-50 mb-5 w-75">서울의 중심에서 맞춤형 비자 솔루션과 럭셔리 항공 예약을 제공합니다. 복잡한 국경 이동, 저희가 책임지겠습니다.</p>
+                    <div class="d-flex flex-column flex-md-row gap-3">
+                        <a href="visa.html" class="btn btn-primary px-5 py-3 rounded-0 fw-bold">비자 서비스 보기</a>
+                        <a href="booking.html" class="btn btn-outline-light px-5 py-3 rounded-0 fw-bold">항공권 예약</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seoul Specialty Section -->
+    <section class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80" alt="Seoul Skyline" class="img-fluid shadow-lg rounded-0">
+                        <div class="bg-primary text-white p-4 position-absolute bottom-0 end-0 d-none d-md-block shadow-lg" style="transform: translate(20px, 20px);">
+                            <h4 class="mb-0 fw-bold">서울 사무소</h4>
+                            <p class="small mb-0 opacity-75">글로벌 운영 센터</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">왜 에테하드 여행사인가요?</h2>
+                    <p class="text-muted lead mb-4">서울 비즈니스 지구 중심에 위치하여 기업 임원 및 외국인 거주자의 빠른 요구 사항을 완벽하게 이해하고 있습니다.</p>
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-shield-check text-primary fs-3 me-3"></i>
+                                <h6 class="mb-0 fw-bold">신뢰할 수 있는 전문성</h6>
+                            </div>
+                            <p class="small text-muted">20년 이상 복잡한 글로벌 비자 규정을 다루어 왔으며 99%의 승인 성공률을 자랑합니다.</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-clock-history text-primary fs-3 me-3"></i>
+                                <h6 class="mb-0 fw-bold">급행 서류 접수</h6>
+                            </div>
+                            <p class="small text-muted">긴급한 비즈니스 및 주요 여행을 위한 최우선 순위 처리 서비스를 제공합니다.</p>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline-dark rounded-0 px-4 py-2 mt-4 fw-bold">회사 소개 더 보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-dark text-white border-top border-secondary">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-6 col-md-3">
+                    <h2 class="display-5 fw-bold text-primary mb-0">10,000+</h2>
+                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">비자 승인 완료</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="display-5 fw-bold text-primary mb-0">25+</h2>
+                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">업계 경력(년)</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="display-5 fw-bold text-primary mb-0">50+</h2>
+                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">서비스 국가</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="display-5 fw-bold text-primary mb-0">99%</h2>
+                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">성공률</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-4">ETTEHAD <span class="text-primary">TRAVELS</span></h5>
+                    <p class="text-white-50 small">글로벌 모빌리티를 위한 엘리트 파트너. 서울에 본사를 두고 있으며, 전 세계의 복잡한 여행 요구 사항을 정밀하고 세심하게 처리합니다.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold mb-4">빠른 링크</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">홈</a></li>
+                        <li class="mb-2"><a href="visa.html" class="text-white-50 text-decoration-none">비자 서비스</a></li>
+                        <li class="mb-2"><a href="booking.html" class="text-white-50 text-decoration-none">예약</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">고객 센터</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold mb-4">전문 분야</h6>
+                    <ul class="list-unstyled small text-white-50">
+                        <li class="mb-2">쉥겐 비자 전문가</li>
+                        <li class="mb-2">미국/캐나다 컨설팅</li>
+                        <li class="mb-2">럭셔리 항공권 발권</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold mb-4">서울 연락처</h6>
+                    <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2"></i> 서울특별시 강남구 테헤란로 123</p>
+                    <p class="text-white-50 small mb-2"><i class="bi bi-telephone me-2"></i> +82 2-123-4567</p>
+                    <p class="text-white-50 small"><i class="bi bi-envelope me-2"></i> seoul@ettehadtravels.com</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-white-50 small">
+                <p class="mb-0">&copy; 2026 Ettehad Travels Seoul. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
