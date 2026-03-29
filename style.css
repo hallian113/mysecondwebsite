@@ -1,0 +1,209 @@
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --primary-gold: #c5a059; /* Classic premium gold or use a deep sky blue #0052cc */
+    --dark-navy: #0a192f;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: var(--dark-navy);
+}
+
+h1, h2, .navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Luxury Hero Styling */
+.hero-premium {
+    height: 100vh;
+    background: url('assets/img/hero-bg.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sky-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(75deg, rgba(10, 25, 47, 0.9) 0%, rgba(10, 25, 47, 0.2) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+/* The Airplane: Slow & Professional */
+.airplane-container {
+    position: absolute;
+    top: 35%;
+    left: -10%;
+    z-index: 2;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+    animation: luxury-flight 45s linear infinite;
+}
+
+.airplane {
+    width: 200px; /* Adjust size as needed */
+    opacity: 0.4; /* Makes it look like a subtle background element */
+    animation: flyAcross 25s linear infinite;
+}
+
+@keyframes luxury-flight {
+    0% { left: -20%; transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(2deg); }
+    100% { left: 110%; transform: translateY(-10px) rotate(-1deg); }
+}
+
+/* Custom Buttons */
+.btn-primary {
+    background-color: var(--primary-gold);
+    border: none;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tracking-widest {
+    letter-spacing: 5px;
+}
+/* Destination Section Styling */
+.destinations-section {
+    background-color: #fdfdfd;
+}
+
+/* Image 1 (Large) */
+.main-img-wrapper {
+    width: 85%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.main-img-wrapper img {
+    transition: transform 0.8s ease;
+}
+
+.main-img-wrapper:hover img {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* Image 2 (Small Overlap) */
+.sub-img-wrapper {
+    position: absolute;
+    width: 50%;
+    bottom: -40px;
+    right: 0;
+    z-index: 2;
+}
+
+/* Tracking for text */
+.tracking-widest {
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Custom Primary Color (Gold or Deep Blue) */
+.text-primary {
+    color: #c5a059 !important; /* Premium Gold */
+}
+
+.btn-outline-dark:hover {
+    background-color: #0a192f;
+    color: white;
+}
+/* Deep Navy Background */
+.bg-navy {
+    background-color: #0a192f !important;
+}
+
+/* Metallic Gold for Numbers */
+.text-gold {
+    color: #c5a059 !important;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Fix for Footer Links */
+footer a {
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #c5a059 !important;
+    padding-left: 5px; /* Subtle movement effect */
+}
+
+/* Ensure spacing between the sections */
+section {
+    position: relative;
+}
+/* --- MOBILE RESPONSIVENESS --- */
+
+@media (max-width: 768px) {
+    /* 1. Fix the Header Spacing so it doesn't hide under the Navbar */
+    .hero-premium {
+        padding-top: 100px; /* Pushes the text down below the navy navbar */
+        height: auto;
+        min-height: 100vh;
+        display: block; /* Changes from flex to block for better stacking */
+    }
+
+    /* 2. Shrink the Heading Text */
+    .hero-premium h1 {
+        font-size: 2.2rem !important; 
+        line-height: 1.1;
+        margin-top: 20px;
+    }
+
+    /* 3. Fix the Airplane (Move it higher to stay clear of the text) */
+    .airplane-container {
+        top: 12% !important; 
+        width: 100px; /* Small and subtle */
+        opacity: 0.5;
+    }
+
+    /* 4. Fix the Buttons (No more giant gold boxes) */
+    .hero-content .d-flex {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .btn-primary {
+        width: 100%; /* Full width looks better on mobile */
+        padding: 15px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* 5. Fix the Navbar "Consultation" button hiding text */
+    .navbar .btn-outline-light {
+        display: none; /* Hide the small button on mobile to clean up the header */
+    }
+
+    /* 6. Description text padding */
+    .hero-premium p.lead {
+        font-size: 1rem;
+        margin-bottom: 30px !important;
+    }
+}
+
+/* Prevent Horizontal Scrolling (Crucial for the Plane) */
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: #0a192f; /* Solid Navy background for mobile menu */
+        padding: 20px;
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+}
