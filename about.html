@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Ettehad Travels Seoul</title>
+
+    <link rel="alternate" hreflang="en" href="about.html" />
+    <link rel="alternate" hreflang="ko" href="kr/about.html" />
+    <link rel="alternate" hreflang="zh" href="zh/about.html" />
+    <link rel="alternate" hreflang="ar" href="ar/about.html" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        .flag-link { transition: all 0.3s ease; display: inline-block; margin: 0 6px; filter: grayscale(20%); }
+        .flag-link:hover { filter: grayscale(0%); transform: scale(1.15); }
+        .flag-icon { width: 24px; height: 16px; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); vertical-align: middle; }
+        
+        .hero-about { 
+            height: 60vh; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/about-main.jpg'); /* IMAGE 1: MAIN OFFICE/TEAM */
+            background-size: cover; 
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .img-gallery {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .img-gallery:hover { transform: scale(1.05); }
+
+        .reveal-hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal-visible { opacity: 1; transform: translateY(0); }
+        
+        .stat-card { border-bottom: 4px solid #0d6efd; background: white; padding: 30px; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="assets/ettehad.png" alt="Ettehad Travels" height="40" class="me-2">
+                <span>ETTEHAD<span class="text-primary"> TRAVELS</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visa.html">Visas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active text-primary" href="about.html">About</a></li>
+                     <li class="nav-item ms-lg-4 d-flex align-items-center mt-3 mt-lg-0">
+        <a href="contact.html" class="flag-link" title="English"><img src="https://flagcdn.com/w40/us.png" class="flag-icon flag-active"></a>
+        <a href="kr/contact.html" class="flag-link"><img src="https://flagcdn.com/w40/kr.png" class="flag-icon"></a>
+        <a href="zh/contact.html" class="flag-link"><img src="https://flagcdn.com/w40/cn.png" class="flag-icon"></a>
+        <a href="ar/contact.html" class="flag-link"><img src="https://flagcdn.com/w40/sa.png" class="flag-icon"></a>
+    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-about">
+        <div class="container">
+            <span class="text-uppercase tracking-widest text-primary fw-bold mb-3 d-block">Established Excellence</span>
+            <h1 class="display-3 fw-bold">Our Journey in Seoul</h1>
+            <p class="lead">Serving the global community with integrity since years.</p>
+        </div>
+    </header>
+
+    <section class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal-hidden">
+                    <h2 class="fw-bold mb-4">Message from the Director</h2>
+                    <p class="text-muted">Under the leadership of <strong>Wahed Ahmed</strong>, Ettehad Travels (주) 이태하드인터내셔널 has grown to be a trusted name in South Korea. We don't just sell tickets; we build connections between cultures and families.</p>
+                    <div class="stat-card shadow-sm mt-4">
+                        <h4 class="text-primary fw-bold mb-1">100% Verified</h4>
+                        <p class="mb-0 small text-muted">Licensed Business: 106-86-71210</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal-hidden">
+                    <img src="assets/office1.jpeg" class="img-fluid rounded shadow-lg" alt="Wahed Ahmed Office">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Glimpses of Our Success</h2>
+                <p class="text-muted">Reliable services captured in moments.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 reveal-hidden">
+                    <img src="assets/office2.jpeg" class="img-gallery" alt="Travel Consultation">
+                    <p class="mt-3 fw-bold text-center">Consultation Excellence</p>
+                </div>
+                <div class="col-md-4 reveal-hidden">
+                    <img src="assets/office3.jpeg" class="img-gallery" alt="Client Support">
+                    <p class="mt-3 fw-bold text-center">Global Ticketing</p>
+                </div>
+                <div class="col-md-4 reveal-hidden">
+                    <img src="assets/office4.jpeg" class="img-gallery" alt="Seoul Office">
+                    <p class="mt-3 fw-bold text-center">Our Seoul Headquarters</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
+        <div class="container text-center">
+            <h5 class="fw-bold mb-3">ETTEHAD TRAVELS</h5>
+            <p class="small text-white-50">Seoul, Yongsan-Gu, Usadan-Ro 10 Gil 9</p>
+            <p class="small text-white-50">Reg: 106-86-71210 | Director: Wahed Ahmed</p>
+            <hr class="border-secondary my-4">
+            <p class="mb-0 small text-white-50">&copy; 2026 Ettehad Travels Seoul. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-hidden').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

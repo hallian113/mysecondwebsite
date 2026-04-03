@@ -5,37 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>고객 센터 | 에테하드 여행사 서울</title>
     
-    <!-- SEO & Localization -->
     <link rel="alternate" hreflang="en" href="../contact.html" />
     <link rel="alternate" hreflang="ko" href="contact.html" />
     <link rel="alternate" hreflang="zh" href="../zh/contact.html" />
     <link rel="alternate" hreflang="ar" href="../ar/contact.html" />
 
-    <!-- Premium Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Path to Root CSS -->
     <link rel="stylesheet" href="../style.css">
 
     <style>
-        /* Flag Switcher Styling */
         .flag-link { transition: all 0.3s ease; display: inline-block; margin: 0 6px; filter: grayscale(20%); }
         .flag-link:hover { filter: grayscale(0%); transform: scale(1.15); }
         .flag-icon { width: 24px; height: 16px; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); vertical-align: middle; }
         .flag-active { border: 2px solid #0d6efd; padding: 1px; filter: grayscale(0%); }
-        
         .contact-card { transition: transform 0.3s ease; }
         .contact-card:hover { transform: translateY(-5px); }
     </style>
 </head>
 <body class="bg-light">
 
-    <!-- Premium Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <i class="bi bi-globe-americas text-primary me-2 fs-3"></i>
+                <img src="../assets/ettehad.png" alt="Ettehad Travels" height="40" class="me-2">
                 <span>ETTEHAD<span class="text-primary"> TRAVELS</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -46,46 +40,34 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">홈</a></li>
                     <li class="nav-item"><a class="nav-link" href="visa.html">비자 서비스</a></li>
                     <li class="nav-item"><a class="nav-link" href="booking.html">예약</a></li>
-                    <li class="nav-item"><a class="nav-link active text-primary" href="contact.html">고객 센터</a></li>
-                    
-                    <!-- Flag Language Switcher -->
+                    <li class="nav-item"><a class="nav-link active text-warning" href="contact.html">고객 센터</a></li>
+                       <li class="nav-item"><a class="nav-link active gold-text" href="about.html">회사 소개</a></li>
                     <li class="nav-item ms-lg-4 d-flex align-items-center mt-3 mt-lg-0">
-                        <a href="../contact.html" class="flag-link" title="English">
-                            <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="English">
-                        </a>
-                        <a href="contact.html" class="flag-link" title="한국어">
-                            <img src="https://flagcdn.com/w40/kr.png" class="flag-icon flag-active" alt="Korean">
-                        </a>
-                        <a href="../zh/contact.html" class="flag-link" title="简体中文">
-                            <img src="https://flagcdn.com/w40/cn.png" class="flag-icon" alt="Chinese">
-                        </a>
-                        <a href="../ar/contact.html" class="flag-link" title="العربية">
-                            <img src="https://flagcdn.com/w40/sa.png" class="flag-icon" alt="Arabic">
-                        </a>
+                        <a href="../contact.html" class="flag-link" title="English"><img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="English"></a>
+                        <a href="contact.html" class="flag-link" title="한국어"><img src="https://flagcdn.com/w40/kr.png" class="flag-icon flag-active" alt="Korean"></a>
+                        <a href="../zh/contact.html" class="flag-link" title="简体中文"><img src="https://flagcdn.com/w40/cn.png" class="flag-icon" alt="Chinese"></a>
+                        <a href="../ar/contact.html" class="flag-link" title="العربية"><img src="https://flagcdn.com/w40/sa.png" class="flag-icon" alt="Arabic"></a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Header -->
     <header class="hero-premium d-flex align-items-center" style="height: 45vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1538485399081-7191af9cd540?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;">
         <div class="sky-overlay"></div>
         <div class="container hero-content text-center">
-            <span class="text-uppercase tracking-widest text-primary mb-2 d-block fw-bold">서울 글로벌 본사</span>
+            <span class="text-uppercase tracking-widest text-primary mb-2 d-block fw-bold">용산구 본사</span>
             <h1 class="display-4 text-white fw-bold">문의하기</h1>
             <p class="text-white-50 lead">신뢰할 수 있는 여행 파트너, 에테하드가 함께합니다.</p>
         </div>
     </header>
 
-    <!-- Contact Content -->
     <section class="py-5">
         <div class="container py-5 reveal-hidden">
             <div class="row g-5">
-                <!-- Contact Info -->
                 <div class="col-md-5">
                     <h2 class="fw-bold mb-4">프리미엄 컨설팅</h2>
-                    <p class="text-muted mb-5">맞춤형 여행 전략 및 비자 솔루션을 위해 강남 사무소를 방문해 주세요. 당사의 전문가들이 고객님의 글로벌 여정을 도울 준비가 되어 있습니다.</p>
+                    <p class="text-muted mb-5">맞춤형 여행 전략 및 비자 솔루션을 위해 서울 본사를 방문해 주세요. 당사의 전문가들이 고객님의 글로벌 여정을 도울 준비가 되어 있습니다.</p>
                     
                     <div class="contact-card p-4 bg-white shadow-sm mb-4 border-start border-primary border-4">
                         <div class="d-flex align-items-center mb-3">
@@ -99,14 +81,21 @@
                             <i class="bi bi-geo-alt text-primary fs-4 me-3"></i>
                             <div>
                                 <h6 class="fw-bold mb-0">위치</h6>
-                                <p class="small text-muted mb-0">서울특별시 강남구 테헤란로 123</p>
+                                <p class="small text-muted mb-0">서울특별시 용산구 우사단로10길 9 (04405)</p>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center mb-3">
                             <i class="bi bi-telephone text-primary fs-4 me-3"></i>
                             <div>
                                 <h6 class="fw-bold mb-0">대표 전화</h6>
-                                <p class="small text-muted mb-0">+82 2-123-4567</p>
+                                <p class="small text-muted mb-0">+82 2-794-9673 | +82 10-2235-9673</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-printer text-primary fs-4 me-3"></i>
+                            <div>
+                                <h6 class="fw-bold mb-0">팩스</h6>
+                                <p class="small text-muted mb-0">+82 2-794-9675</p>
                             </div>
                         </div>
                     </div>
@@ -116,13 +105,11 @@
                         <div class="d-flex gap-3">
                             <a href="#" class="btn btn-outline-dark btn-sm rounded-circle shadow-sm"><i class="bi bi-facebook"></i></a>
                             <a href="#" class="btn btn-outline-dark btn-sm rounded-circle shadow-sm"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="btn btn-outline-dark btn-sm rounded-circle shadow-sm"><i class="bi bi-chat-fill"></i></a>
-                            <a href="#" class="btn btn-outline-dark btn-sm rounded-circle shadow-sm"><i class="bi bi-whatsapp"></i></a>
+                            <a href="https://wa.me/821022359673" class="btn btn-outline-dark btn-sm rounded-circle shadow-sm"><i class="bi bi-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
                 <div class="col-md-7">
                     <div class="p-4 p-md-5 bg-white shadow-lg border-0">
                         <h4 class="fw-bold mb-4">메시지 보내기</h4>
@@ -130,15 +117,15 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="small fw-bold text-muted mb-1">성함</label>
-                                    <input type="text" class="form-control border-0 bg-light p-3 rounded-0" placeholder="홍길동" required>
+                                    <input type="text" class="form-control border-0 bg-light p-3 rounded-0 shadow-none" placeholder="성함을 입력하세요" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="small fw-bold text-muted mb-1">이메일 주소</label>
-                                    <input type="email" class="form-control border-0 bg-light p-3 rounded-0" placeholder="example@email.com" required>
+                                    <input type="email" class="form-control border-0 bg-light p-3 rounded-0 shadow-none" placeholder="example@email.com" required>
                                 </div>
                                 <div class="col-12">
                                     <label class="small fw-bold text-muted mb-1">문의 내용</label>
-                                    <textarea class="form-control border-0 bg-light p-3 rounded-0" rows="5" placeholder="궁금하신 내용을 입력해 주세요." required></textarea>
+                                    <textarea class="form-control border-0 bg-light p-3 rounded-0 shadow-none" rows="5" placeholder="궁금하신 내용을 입력해 주세요." required></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary w-100 py-3 fw-bold tracking-widest text-uppercase">메시지 전송하기</button>
@@ -149,12 +136,11 @@
                 </div>
             </div>
 
-            <!-- Map Section -->
             <div class="row mt-5">
                 <div class="col-12">
                     <div class="shadow-lg rounded overflow-hidden border-top border-primary border-4">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.58022718151!2d127.02534577635678!3d37.501306727284485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1507f300181%3A0x89e27c19957d0796!2sTeheran-ro%2C%20Gangnam-gu%2C%20Seoul%2C%20South%20Korea!5e0!3m2!1sen!2s!4v1710000000000!5m2!1sen!2s" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.666133465134!2d126.992644!3d37.533282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca23730e2034b%3A0x67981329c303102a!2s9%20Usadan-ro%2010-gil%2C%20Yongsan-gu%2C%20Seoul!5e0!3m2!1sen!2skr!4v1711200000000!5m2!1sen!2skr" 
                             width="100%" 
                             height="450" 
                             style="border:0;" 
@@ -167,22 +153,28 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
-                    <h5 class="fw-bold mb-2">ETTEHAD <span class="text-primary">TRAVELS</span> SEOUL</h5>
-                    <p class="text-white-50 small mb-0">서울특별시 강남구 테헤란로 123 | 대표전화: +82 2-123-4567</p>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-4">ETTEHAD <span class="text-primary">TRAVELS</span></h5>
+                    <p class="text-white-50 small">주식회사 이태하드인터내셔널. 글로벌 이동을 위한 귀하의 엘리트 파트너입니다.</p>
+                    <p class="text-white-50 small"><strong>사업자 등록번호:</strong> 106-86-71210</p>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="text-white-50 small mb-0">&copy; 2026 에테하드 여행사. All Rights Reserved.</p>
+                <div class="col-md-5 mb-4 ms-auto">
+                    <h6 class="fw-bold mb-4">서울 사무소</h6>
+                    <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 서울특별시 용산구 우사단로10길 9 (04405)</p>
+                    <p class="text-white-50 small mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +82 2-794-9673 | +82 10-2235-9673</p>
+                    <p class="text-white-50 small"><i class="bi bi-envelope me-2 text-primary"></i> ettehad9673@gmail.com</p>
                 </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-white-50 small">
+                <p class="mb-0">© 2026 에테하드 여행사. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const observer = new IntersectionObserver((entries) => {
