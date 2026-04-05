@@ -8,9 +8,56 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
-        .sidebar { width: 260px; height: 100vh; position: fixed; background: #1a252f; color: white; padding: 20px; }
-        .main-content { margin-left: 260px; padding: 40px; }
-        .nav-link { color: #bdc3c7; margin-bottom: 10px; transition: 0.3s; }
+        
+        /* --- UPDATED SIDEBAR & MAIN CONTENT FOR RESPONSIVENESS --- */
+        .sidebar { 
+            width: 260px; 
+            height: 100vh; 
+            position: fixed; 
+            background: #1a252f; 
+            color: white; 
+            padding: 20px; 
+            transition: all 0.3s ease;
+            z-index: 1050;
+        }
+        
+        .main-content { 
+            margin-left: 260px; 
+            padding: 40px; 
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Adjustments (Tablets and Phones) */
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 70px;
+                padding: 20px 10px;
+                text-align: center;
+            }
+            /* Hide text labels on mobile to save space */
+            .sidebar h4 span, 
+            .sidebar .nav-link span, 
+            .sidebar button span {
+                display: none;
+            }
+            .sidebar h4 { font-size: 0.8rem; margin-bottom: 30px !important; }
+            .sidebar .nav-link { justify-content: center; padding: 10px 0; }
+            .sidebar .nav-link i { margin: 0 !important; font-size: 1.4rem; }
+            
+            .main-content {
+                margin-left: 70px;
+                padding: 20px;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 576px) {
+            .main-content h2 { font-size: 1.25rem; }
+            .card h2 { font-size: 1.5rem; }
+        }
+        
+        /* --- REMAINING ORIGINAL STYLES --- */
+        .nav-link { color: #bdc3c7; margin-bottom: 10px; transition: 0.3s; display: flex; align-items: center; }
         .nav-link:hover { color: white; background: rgba(255,255,255,0.1); border-radius: 8px; }
         .nav-link.active { background: #34495e; color: white; border-radius: 8px; }
         .card { border-radius: 12px; transition: transform 0.2s; border: none; }
@@ -27,11 +74,15 @@
     <div class="sidebar shadow">
         <h4 class="fw-bold text-primary mb-5 px-2">ETTEHAD <span class="text-white">SEOUL</span></h4>
         <nav class="nav flex-column">
-            <a class="nav-link active" href="#"><i class="bi bi-grid-1x2-fill me-2"></i> Dashboard</a>
+            <a class="nav-link active" href="#">
+                <i class="bi bi-grid-1x2-fill me-2"></i> <span>Dashboard</span>
+            </a>
             <button onclick="exportContacts()" class="btn btn-outline-info btn-sm mt-3 mx-2 text-start border-0 text-white-50">
-                <i class="bi bi-download me-2"></i> Export Contacts
+                <i class="bi bi-download me-2"></i> <span>Export Contacts</span>
             </button>
-            <a class="nav-link mt-5 text-danger" href="javascript:void(0)" id="logoutBtn"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
+            <a class="nav-link mt-5 text-danger" href="javascript:void(0)" id="logoutBtn">
+                <i class="bi bi-box-arrow-left me-2"></i> <span>Logout</span>
+            </a>
         </nav>
     </div>
 
@@ -130,31 +181,20 @@
             });
         }
 
-        // ✅ SMART WhatsApp Function (Fixes +92, 0082, 010 etc.)
         window.sendWhatsApp = (phone, name, destination) => {
             if (!phone) { alert("Phone number not found!"); return; }
-
-            // 1. Sirf numbers rakhein (+, spaces wagera nikaal dein)
             let clean = phone.replace(/\D/g, ''); 
-
-            // 2. Agar number 00 se shuru ho rha hy (e.g. 0082 ya 0092), to 00 nikaal dein
             if (clean.startsWith('00')) { clean = clean.substring(2); }
-
-            // 3. Agar abhi bhi number 0 se shuru ho rha hy (e.g. 0300 or 010), to country code lagayein
             if (clean.startsWith('0')) {
-                // Agar 010, 011 wagera hy to Korea (82), agar 03 hy to Pakistan (92)
                 if (clean.startsWith('010') || clean.startsWith('011')) {
                     clean = '82' + clean.substring(1);
                 } else {
                     clean = '92' + clean.substring(1);
                 }
             }
-
             const defaultMsg = `Hello ${name}, this is Ettehad Travels Seoul. We have new updates regarding visas for ${destination}.`;
             const customMessage = prompt("Enter message:", defaultMsg);
-
             if (customMessage) {
-                // Seedha WhatsApp API call
                 window.open(`https://api.whatsapp.com/send?phone=${clean}&text=${encodeURIComponent(customMessage)}`, '_blank');
             }
         };
