@@ -3,41 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예약 문의 | 에테하드 여행사 서울</title>
-
-    <!-- SEO & Localization -->
-    <link rel="alternate" hreflang="en" href="../booking.html" />
-    <link rel="alternate" hreflang="ko" href="booking.html" />
-    <link rel="alternate" hreflang="zh" href="../zh/booking.html" />
-    <link rel="alternate" hreflang="ar" href="../ar/booking.html" />
-
-    <!-- Premium Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>예약 안내 | 에태하드 여행사 서울 (Ettehad Travels)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Path to Root CSS -->
-    <link rel="stylesheet" href="../style.css">
 
     <style>
-        /* Flag Switcher Styling */
-        .flag-link { transition: all 0.3s ease; display: inline-block; margin: 0 6px; filter: grayscale(20%); }
-        .flag-link:hover { filter: grayscale(0%); transform: scale(1.15); }
-        .flag-icon { width: 24px; height: 16px; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); vertical-align: middle; }
-        .flag-active { border: 2px solid #0d6efd; padding: 1px; filter: grayscale(0%); }
-        
-        .bg-navy { background-color: #0a192f; }
-        .hover-shadow:hover { box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important; }
-        .transition { transition: all 0.3s ease; }
+        :root {
+            --primary-dark: #1a1a1a;
+            --accent-gold: #ffc107;
+        }
+
+        body { 
+            font-family: 'Montserrat', 'Malgun Gothic', sans-serif; 
+            background-color: #f4f7f6;
+        }
+
+        /* Navbar Styling */
+        .navbar { background: var(--primary-dark) !important; padding: 15px 0; }
+        .flag-icon { width: 22px; height: 14px; object-fit: cover; border-radius: 2px; }
+        .flag-active { border: 1.5px solid var(--accent-gold); }
+
+        /* Hero Section */
+        .hero-premium { 
+            position: relative; 
+            height: 40vh; 
+            background: url('https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+        }
+
+        /* Info Cards */
+        .service-feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-top: 5px solid #0d6efd;
+        }
+
+        .reg-detail-box {
+            background: #f8f9fa;
+            border-left: 4px solid #0d6efd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Bank Card */
+        .bank-card-premium {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); 
+            border-radius: 20px;
+            padding: 35px;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .btn-book-now {
+            padding: 16px 35px;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.4s;
+        }
+        .btn-book-now:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 193, 7, 0.4);
+        }
+
+        footer { background: #111; color: #bbb; }
     </style>
 </head>
-<body class="bg-light">
+<body>
 
-    <!-- Premium Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <i class="bi bi-globe-americas text-primary me-2 fs-3"></i>
-                <span>ETTEHAD<span class="text-primary"> TRAVELS</span></span>
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="assets/ettehad.png" alt="Logo" height="35" class="me-2">
+                ETTEHAD <span class="text-warning">TRAVELS</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -46,209 +97,146 @@
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">홈</a></li>
                     <li class="nav-item"><a class="nav-link" href="visa.html">비자 서비스</a></li>
-                    <li class="nav-item"><a class="nav-link active text-primary" href="booking.html">예약 문의</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="booking.html">예약 안내</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">회사 소개</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">고객 센터</a></li>
-                       <li class="nav-item"><a class="nav-link active gold-text" href="about.html">회사 소개</a></li>
-                    <!-- Flag Language Switcher -->
-                    <li class="nav-item ms-lg-4 d-flex align-items-center mt-3 mt-lg-0">
-                        <a href="../booking.html" class="flag-link" title="English">
-                            <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="English">
-                        </a>
-                        <a href="booking.html" class="flag-link" title="한국어">
-                            <img src="https://flagcdn.com/w40/kr.png" class="flag-icon flag-active" alt="Korean">
-                        </a>
-                        <a href="../zh/booking.html" class="flag-link" title="简体中文">
-                            <img src="https://flagcdn.com/w40/cn.png" class="flag-icon" alt="Chinese">
-                        </a>
-                        <a href="../ar/booking.html" class="flag-link" title="العربية">
-                            <img src="https://flagcdn.com/w40/sa.png" class="flag-icon" alt="Arabic">
-                        </a>
+                    <li class="nav-item ms-lg-3 d-flex gap-2">
+                        <a href="../booking.html" class="flag-link"><img src="https://flagcdn.com/w40/us.png" class="flag-icon"></a>
+                        <a href="booking.html" class="flag-link"><img src="https://flagcdn.com/w40/kr.png" class="flag-icon flag-active"></a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <header class="hero-premium d-flex align-items-center" style="height: 45vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;">
-        <div class="sky-overlay"></div>
-        <div class="container hero-content text-center">
-            <span class="text-uppercase tracking-widest text-primary mb-2 d-block fw-bold">Custom Trip Design</span>
-            <h1 class="display-4 text-white fw-bold">당신의 여정을 설계하세요</h1>
+    <header class="hero-premium text-center">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative z-1 text-white">
+            <h6 class="text-warning fw-bold text-uppercase tracking-widest mb-3">인증된 공식 예약 사무소</h6>
+            <h1 class="display-4 fw-bold mb-0">공식 예약 채널</h1>
+            <p class="lead opacity-75">검증된 기업 여행 솔루션 | 대한민국 서울</p>
         </div>
     </header>
 
-    <!-- Booking Form & Info Section -->
     <section class="py-5">
-        <div class="container py-5">
+        <div class="container py-lg-5">
             <div class="row g-5">
-                <!-- Left Side: The Form -->
-                <div class="col-lg-8 reveal-hidden">
-                    <div class="bg-white p-4 p-md-5 shadow-lg border-top border-primary border-4">
-                        <div class="mb-5">
-                            <h2 class="fw-bold">무료 견적 요청</h2>
-                            <p class="text-muted">글로벌 항공사 인벤토리 및 럭셔리 호텔 블록에 직접 액세스하여 최적의 가격을 제공합니다.</p>
-                        </div>
+                <div class="col-lg-7">
+                    <div class="service-feature-card">
+                        <h2 class="fw-bold mb-4">서비스 약속</h2>
+                        <p class="text-muted mb-5">서울에 위치한 정식 허가 여행사로서, 안전하고 신속한 통합 여행 솔루션을 제공합니다.</p>
                         
-                        <form id="bookingForm">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold tracking-widest text-uppercase">Departure</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text bg-light border-0 text-primary"><i class="bi bi-geo-alt"></i></span>
-                                        <input type="text" class="form-control border-0 bg-light p-3 rounded-0" placeholder="예: 서울 (ICN)" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold tracking-widest text-uppercase">Destination</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text bg-light border-0 text-primary"><i class="bi bi-airplane"></i></span>
-                                        <input type="text" class="form-control border-0 bg-light p-3 rounded-0" placeholder="예: 런던 (LHR)" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label small fw-bold tracking-widest text-uppercase">Date</label>
-                                    <input type="date" class="form-control border-0 bg-light p-3 rounded-0" required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label small fw-bold tracking-widest text-uppercase">Passengers</label>
-                                    <select class="form-select border-0 bg-light p-3 shadow-none rounded-0">
-                                        <option value="1">성인 1명</option>
-                                        <option value="2">성인 2명</option>
-                                        <option value="3+">3명 이상 (단체)</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label small fw-bold tracking-widest text-uppercase">Class</label>
-                                    <select class="form-select border-0 bg-light p-3 shadow-none rounded-0">
-                                        <option>이코노미</option>
-                                        <option>프리미엄 이코노미</option>
-                                        <option>비즈니스 클래스</option>
-                                        <option>퍼스트 클래스</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label small fw-bold tracking-widest text-uppercase">Contact Info</label>
-                                    <input type="text" class="form-control border-0 bg-light p-3 rounded-0" placeholder="이메일 또는 카카오톡 ID" required>
-                                </div>
-                                <div class="col-12 mt-5">
-                                    <button type="submit" class="btn btn-primary w-100 py-3 fw-bold tracking-widest rounded-0">
-                                        맞춤 견적 받기 <i class="bi bi-arrow-right ms-2"></i>
-                                    </button>
-                                </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-4 text-primary">
+                                <i class="bi bi-airplane-engines fs-4"></i>
                             </div>
-                        </form>
+                            <div>
+                                <h5 class="fw-bold">전 세계 항공권 예약</h5>
+                                <p class="text-muted mb-0 small">주요 항공사와의 직접 연계를 통한 기업 할인 요금 제공.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-4 text-primary">
+                                <i class="bi bi-passport fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold">비자 컨설팅</h5>
+                                <p class="text-muted mb-0 small">한국 및 전 세계 비자 서류 준비를 위한 전문가 지원.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-5">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-4 text-primary">
+                                <i class="bi bi-shield-check fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold">안전한 거래 시스템</h5>
+                                <p class="text-muted mb-0 small">기업 전용 뱅킹 채널을 통한 투명하고 안전한 결제 처리.</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="contact.html" class="btn btn-warning btn-book-now w-100 shadow-sm">
+                                <i class="bi bi-calendar-check me-2"></i> 지금 예약하기
+                            </a>
+                            <p class="small text-muted mt-3">클릭 시 공식 상담 채널로 연결됩니다.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right Side: Contact Sidebar -->
-                <div class="col-lg-4">
-                    <div class="card border-0 shadow-sm p-4 bg-navy text-white mb-4 rounded-0">
-                        <h5 class="fw-bold mb-3 text-primary">우선순위 예약</h5>
-                        <p class="small text-white-50">1시간 이내에 긴급 발권이 필요하신가요? 긴급 서비스 데스크로 연락해 주세요.</p>
-                        <hr class="border-secondary">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="bi bi-whatsapp text-primary fs-4 me-3"></i>
-                            <div>
-                                <p class="mb-0 small text-white-50 text-uppercase tracking-tighter">WhatsApp</p>
-                                <span class="fw-bold">+82 10-XXXX-XXXX</span>
-                            </div>
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-sm p-4 mb-4 rounded-4">
+                        <h6 class="text-primary fw-bold text-uppercase mb-4 small">사무실 등록 정보</h6>
+                        <div class="reg-detail-box">
+                            <label class="small text-muted text-uppercase d-block mb-1">대표자</label>
+                            <span class="fw-bold text-dark">와히드 아메드 (WAHED AHMED)</span>
                         </div>
-                        <div class="d-flex align-items-center">
-                            <i class="bi bi-chat-dots text-primary fs-4 me-3"></i>
-                            <div>
-                                <p class="mb-0 small text-white-50 text-uppercase tracking-tighter">KakaoTalk ID</p>
-                                <span class="fw-bold">EttehadTravelsKR</span>
-                            </div>
+                        <div class="reg-detail-box">
+                            <label class="small text-muted text-uppercase d-block mb-1">주소 (대한민국)</label>
+                            <span class="fw-bold text-dark">서울특별시 용산구 우사단로 10길 9</span>
+                            <p class="small text-muted mb-0">(우: 04405)</p>
+                        </div>
+                        <div class="reg-detail-box">
+                            <label class="small text-muted text-uppercase d-block mb-1">연락처 정보</label>
+                            <div class="fw-bold text-dark">휴대폰: 010-2235-9673</div>
+                            <div class="text-primary small">이메일: ettehad9673@gmail.com</div>
                         </div>
                     </div>
 
-                    <div class="bg-white p-4 shadow-sm border-start border-primary border-4">
-                        <h6 class="fw-bold text-uppercase tracking-widest small">우리의 약속</h6>
-                        <ul class="list-unstyled mt-3 mb-0">
-                            <li class="mb-3 small d-flex align-items-center"><i class="bi bi-check2-circle text-primary me-2"></i> 숨겨진 수수료 없음</li>
-                            <li class="mb-3 small d-flex align-items-center"><i class="bi bi-check2-circle text-primary me-2"></i> 실시간 항공편 모니터링</li>
-                            <li class="small d-flex align-items-center"><i class="bi bi-check2-circle text-primary me-2"></i> 비자 통합 관리 서비스</li>
-                        </ul>
+                    <div class="bank-card-premium">
+                        <div class="d-flex justify-content-between mb-5">
+                            <span class="small text-uppercase tracking-widest opacity-75">기업 뱅킹 정보</span>
+                            <i class="bi bi-credit-card fs-3"></i>
+                        </div>
+                        <div class="mb-4">
+                            <p class="small opacity-50 mb-1">은행명</p>
+                            <h5 class="fw-bold">KB국민은행 (Kookmin Bank)</h5>
+                        </div>
+                        <div class="mb-5">
+                            <p class="small opacity-50 mb-1">계좌번호</p>
+                            <h3 class="fw-bold tracking-widest">026437 - 04 - 000981</h3>
+                        </div>
+                        <div class="pt-3 border-top border-white border-opacity-10 text-end">
+                            <p class="small opacity-50 mb-1">예금주</p>
+                            <h6 class="fw-bold mb-0">(주) 이태하드 인터네셔날</h6>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Specialty Services Grid -->
-    <section class="py-5 bg-white">
-        <div class="container py-5 reveal-hidden">
-            <div class="text-center mb-5">
-                <h2 class="display-6 fw-bold">단순 발권 이상의 가치</h2>
-                <div class="bg-primary mx-auto mt-3" style="height: 3px; width: 50px;"></div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="p-4 border h-100 hover-shadow transition">
-                        <i class="bi bi-building text-primary fs-1 mb-3 d-block"></i>
-                        <h5 class="fw-bold">호텔 컬렉션</h5>
-                        <p class="small text-muted">런던, 파리, 두바이 등 전 세계 5성급 호텔의 기업 특별 요금을 제공합니다.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 border h-100 hover-shadow transition">
-                        <i class="bi bi-people text-primary fs-1 mb-3 d-block"></i>
-                        <h5 class="fw-bold">단체 여행 매니지먼트</h5>
-                        <p class="small text-muted">기업 비즈니스팀이나 대가족을 위한 복합적인 여정의 물류를 완벽하게 관리합니다.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 border h-100 hover-shadow transition">
-                        <i class="bi bi-car-front text-primary fs-1 mb-3 d-block"></i>
-                        <h5 class="fw-bold">글로벌 픽업 서비스</h5>
-                        <p class="small text-muted">해외 현지 쇼퍼 서비스 및 공항 픽업을 서울에서 사전 예약하세요.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
-        <div class="container">
+    <footer class="pt-5 pb-4">
+        <div class="container text-center text-md-start">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h5 class="fw-bold mb-4">ETTEHAD <span class="text-primary">TRAVELS</span></h5>
-                    <p class="text-white-50 small">주식회사 이태하드인터내셔널. 글로벌 이동을 위한 귀하의 엘리트 파트너입니다.</p>
-                    <p class="text-white-50 small"><strong>사업자 등록번호:</strong> 106-86-71210</p>
+                    <h5 class="fw-bold text-white mb-4">ETTEHAD <span class="text-warning">TRAVELS</span></h5>
+                    <p class="small opacity-75">(주) 이태하드인터내셔널. 2010년부터 시작된 글로벌 모빌리티 파트너.</p>
+                    <p class="small text-warning">사업자 등록번호: 106-86-71210</p>
                 </div>
-                <div class="col-md-5 mb-4 ms-auto">
-                    <h6 class="fw-bold mb-4">서울 사무소</h6>
-                    <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 서울특별시 용산구 우사단로10길 9 (04405)</p>
-                    <p class="text-white-50 small mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +82 2-794-9673 | +82 10-2235-9673</p>
-                    <p class="text-white-50 small"><i class="bi bi-envelope me-2 text-primary"></i> ettehad9673@gmail.com</p>
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold text-white mb-4">빠른 링크</h6>
+                    <ul class="list-unstyled small opacity-75">
+                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">홈</a></li>
+                        <li class="mb-2"><a href="visa.html" class="text-white text-decoration-none">비자 정보</a></li>
+                        <li class="mb-2"><a href="booking.html" class="text-white text-decoration-none">예약 안내</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5 mb-4">
+                    <h6 class="fw-bold text-white mb-4">서울 사무소</h6>
+                    <p class="small mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i> 서울특별시 용산구 우사단로 10길 9</p>
+                    <p class="small mb-2"><i class="bi bi-telephone me-2 text-warning"></i> 02-794-9673</p>
+                    <p class="small"><i class="bi bi-envelope me-2 text-warning"></i> ettehad9673@gmail.com</p>
                 </div>
             </div>
-            <hr class="border-secondary">
-            <div class="text-center text-white-50 small">
-                <p class="mb-0">© 2026 에테하드 여행사. All Rights Reserved.</p>
+            <hr class="border-secondary my-4">
+            <div class="text-center small opacity-50">
+                &copy; 2026 Ettehad Travels Seoul. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal-visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal-hidden').forEach(el => observer.observe(el));
-
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert("문의가 접수되었습니다! 서울 사무소에서 경로를 검토한 후 곧 최적의 견적을 보내드리겠습니다.");
-            this.reset();
-        });
-    </script>
 </body>
 </html>

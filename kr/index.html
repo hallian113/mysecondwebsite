@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ettehad Travels | 서울 프리미엄 비자 & 여행 컨시어지</title>
+    <title>이태하드 여행사 | 서울 프리미엄 비자 & 여행 컨시어지</title>
     
     <link rel="alternate" hreflang="en" href="../index.html" />
     <link rel="alternate" hreflang="ko" href="index.html" />
@@ -11,21 +11,27 @@
     <link rel="alternate" hreflang="ar" href="../ar/index.html" />
     <link rel="alternate" hreflang="x-default" href="../index.html" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../style.css">
 
     <style>
+        body { font-family: 'Noto Sans KR', sans-serif; }
         .flag-link { transition: all 0.3s ease; display: inline-block; margin: 0 6px; filter: grayscale(20%); }
         .flag-link:hover { filter: grayscale(0%); transform: scale(1.15); }
         .flag-icon { width: 24px; height: 16px; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); vertical-align: middle; }
         .flag-active { border: 2px solid #0d6efd; padding: 1px; filter: grayscale(0%); }
         
-        .trust-badge-card { border-left: 4px solid #0d6efd; background: #f8f9fa; transition: all 0.3s ease; }
-        .trust-badge-card:hover { background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .doc-preview { transition: transform 0.3s ease; cursor: zoom-in; border: 1px solid #dee2e6; }
-        .doc-preview:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .trust-badge-card {
+            border-left: 4px solid #0d6efd;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        .trust-badge-card:hover {
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
     </style>
 </head>
 <body>
@@ -34,7 +40,7 @@
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="../assets/ettehad.png" alt="Ettehad Travels" height="40" class="me-2">
-                <span class="fw-bold">ETTEHAD<span class="text-primary"> TRAVELS</span></span>
+                <span class="fw-bold">이태하드<span class="text-primary"> 여행사</span></span>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -44,20 +50,18 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link active" href="index.html">홈</a></li>
-                    <li class="nav-item"><a class="nav-link" href="visa.html">비자</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visa.html">비자 서비스</a></li>
                     <li class="nav-item"><a class="nav-link" href="booking.html">예약</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">회사 소개</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">문의</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">회사소개</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">문의하기</a></li>
                     
                     <li class="nav-item ms-lg-4 d-flex align-items-center mt-3 mt-lg-0">
                         <a href="../index.html" class="flag-link" title="English"><img src="https://flagcdn.com/w40/us.png" alt="English" class="flag-icon"></a>
                         <a href="index.html" class="flag-link" title="한국어"><img src="https://flagcdn.com/w40/kr.png" alt="Korean" class="flag-icon flag-active"></a>
-                        <a href="../zh/index.html" class="flag-link" title="简体中文"><img src="https://flagcdn.com/w40/cn.png" alt="Chinese" class="flag-icon"></a>
-                        <a href="../ar/index.html" class="flag-link" title="العربية"><img src="https://flagcdn.com/w40/sa.png" alt="Arabic" class="flag-icon"></a>
-                    </li>
+                       
 
                     <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                        <a href="contact.html" class="btn btn-primary btn-sm px-4 rounded-0 fw-bold">상담 예약</a>
+                        <a href="contact.html" class="btn btn-primary btn-sm px-4 rounded-0 fw-bold">상담 예약하기</a>
                     </li>
                 </ul>
             </div>
@@ -73,12 +77,12 @@
         <div class="container hero-content">
             <div class="row">
                 <div class="col-lg-8">
-                    <span class="text-uppercase tracking-widest text-primary mb-3 d-block fw-bold">서울에서 세계로 가는 프리미엄 게이트웨이</span>
-                    <h1 class="display-2 text-white mb-4 fw-bold">여행 경험을<br>한 단계 업그레이드하세요.</h1>
-                    <p class="lead text-white-50 mb-5 w-75">서울 중심에서 2010년부터 맞춤 비자 서비스와 고급 항공편 예약을 제공합니다.</p>
+                    <span class="text-uppercase tracking-widest text-primary mb-3 d-block fw-bold">서울에서 세계로 통하는 최고의 관문</span>
+                    <h1 class="display-2 text-white mb-4 fw-bold">당신의 여행 가치를<br>높여드립니다.</h1>
+                    <p class="lead text-white-50 mb-5 w-75">서울의 중심에서 2010년부터 맞춤형 비자 솔루션과 프리미엄 항공 예약 서비스를 제공하고 있습니다.</p>
                     <div class="d-flex flex-column flex-md-row gap-3">
-                        <a href="visa.html" class="btn btn-primary px-5 py-3 rounded-0 fw-bold">비자 서비스</a>
-                        <a href="booking.html" class="btn btn-outline-light px-5 py-3 rounded-0 fw-bold">항공 예약</a>
+                        <a href="visa.html" class="btn btn-primary px-5 py-3 rounded-0 fw-bold">비자 서비스 보기</a>
+                        <a href="booking.html" class="btn btn-outline-light px-5 py-3 rounded-0 fw-bold">항공권 예약</a>
                     </div>
                 </div>
             </div>
@@ -89,16 +93,16 @@
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5">
-                    <h2 class="display-5 fw-bold mb-4">공식 & 인증된 에이전시</h2>
-                    <p class="text-muted lead mb-4">Ettehad Travels (주) 이태하드인터내셔널는 서울에 기반을 둔 공식 여행사입니다. 2010년 4월부터 합법적으로 운영되며 고객에게 신뢰할 수 있는 서비스를 제공합니다.</p>
+                    <h2 class="display-5 fw-bold mb-4">공식 허가 등록 여행사</h2>
+                    <p class="text-muted lead mb-4">이태하드 여행사 (주) 이태하드인터내셔널은 서울에 본사를 둔 정식 허가 여행 법인입니다. 2010년 4월부터 신뢰와 법적 우수성을 바탕으로 고객님을 모시고 있습니다.</p>
                     
                     <div class="p-4 trust-badge-card mb-4">
-                        <h6 class="fw-bold text-uppercase small text-primary mb-3">인증된 정보</h6>
+                        <h6 class="fw-bold text-uppercase small text-primary mb-3">인증된 사업자 정보</h6>
                         <div class="row small text-muted">
-                            <div class="col-12 mb-2"><i class="bi bi-patch-check-fill text-primary me-2"></i><strong>등록 번호:</strong> 106-86-71210</div>
-                            <div class="col-12 mb-2"><i class="bi bi-person-circle text-primary me-2"></i><strong>대표:</strong> Wahed Ahmed</div>
-                            <div class="col-12 mb-2"><i class="bi bi-bank2 text-primary me-2"></i><strong>은행:</strong> 국민은행</div>
-                            <div class="col-12"><i class="bi bi-geo-alt-fill text-primary me-2"></i><strong>서울 본사:</strong> 용산구, 서울</div>
+                            <div class="col-12 mb-2"><i class="bi bi-patch-check-fill text-primary me-2"></i><strong>사업자 등록번호:</strong> 106-86-71210</div>
+                            <div class="col-12 mb-2"><i class="bi bi-person-circle text-primary me-2"></i><strong>대표이사:</strong> 와헤드 아메드 (Wahed Ahmed)</div>
+                            <div class="col-12 mb-2"><i class="bi bi-bank2 text-primary me-2"></i><strong>거래 은행:</strong> 국민은행 (Kookmin Bank)</div>
+                            <div class="col-12"><i class="bi bi-geo-alt-fill text-primary me-2"></i><strong>서울 본사:</strong> 서울특별시 용산구</div>
                         </div>
                     </div>
                     
@@ -106,34 +110,13 @@
                         <div class="col-6">
                             <div class="p-3 border bg-light">
                                 <h3 class="fw-bold text-primary mb-0">2010</h3>
-                                <p class="small text-muted mb-0">설립연도</p>
+                                <p class="small text-muted mb-0">설립 연도</p>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="p-3 border bg-light">
                                 <h3 class="fw-bold text-primary mb-0">100%</h3>
-                                <p class="small text-muted mb-0">법적 준수</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="row g-3">
-                        <div class="col-md-7">
-                            <div class="card border-0 shadow-sm doc-preview" onclick="window.open('../assets/regslip.jpeg')">
-                                <div class="card-header bg-dark text-white small fw-bold py-2 text-center">사업자 등록증</div>
-                                <img src="../assets/regslip.jpeg" alt="Business License" class="img-fluid p-2 bg-white">
-                            </div>
-                        </div>
-
-                        <div class="col-md-5">
-                            <div class="card border-0 shadow-sm doc-preview mb-3" onclick="window.open('../assets/regcard1.jpeg')">
-                                <div class="card-header bg-primary text-white small fw-bold py-2 text-center">공식 카드</div>
-                                <img src="../assets/regcard1.jpeg" alt="Official Contact Card" class="img-fluid p-2 bg-white">
-                            </div>
-                            <div class="alert alert-info py-2 px-3 small border-0 rounded-0 shadow-sm">
-                                <i class="bi bi-info-circle-fill me-2"></i> 문서를 클릭하여 인증 정보를 확인하세요.
+                                <p class="small text-muted mb-0">법적 준수율</p>
                             </div>
                         </div>
                     </div>
@@ -146,56 +129,65 @@
         <div class="container">
             <div class="row text-center g-4">
                 <div class="col-6 col-md-3">
-                    <h2 class="display-5 fw-bold text-primary mb-0">10k+</h2>
-                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">승인된 비자</p>
+                    <h2 class="display-5 fw-bold text-primary mb-0">10,000+</h2>
+                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">비자 승인 건수</p>
                 </div>
                 <div class="col-6 col-md-3">
                     <h2 class="display-5 fw-bold text-primary mb-0">15+</h2>
-                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">경력 연수</p>
+                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">업계 경력 (년)</p>
                 </div>
                 <div class="col-6 col-md-3">
                     <h2 class="display-5 fw-bold text-primary mb-0">50+</h2>
-                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">목적지</p>
+                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">여행지 국가</p>
                 </div>
                 <div class="col-6 col-md-3">
                     <h2 class="display-5 fw-bold text-primary mb-0">99%</h2>
-                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">성공률</p>
+                    <p class="text-uppercase small tracking-widest text-white-50 mt-2">서비스 성공률</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5 class="fw-bold mb-4">ETTEHAD <span class="text-primary">TRAVELS</span></h5>
-                    <p class="text-white-50 small">Licensed under (주) 이태하드인터내셔널. 글로벌 이동성의 엘리트 파트너.</p>
-                    <p class="text-white-50 small"><strong>사업자 등록:</strong> 106-86-71210</p>
-                </div>
-                <div class="col-md-2 mb-4">
-                    <h6 class="fw-bold mb-4">빠른 링크</h6>
-                    <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">홈</a></li>
-                        <li class="mb-2"><a href="visa.html" class="text-white-50 text-decoration-none">비자</a></li>
-                        <li class="mb-2"><a href="booking.html" class="text-white-50 text-decoration-none">예약</a></li>
-                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">회사 소개</a></li>
-                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">문의</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-5 mb-4 ms-auto">
-                    <h6 class="fw-bold mb-4">서울 본사</h6>
-                    <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 서울 용산구 우사단로 10길 9, 04405</p>
-                    <p class="text-white-50 small mb-2"><i class="bi bi-telephone me-2 text-primary"></i> 02-794-9673 | 010-2235-9673</p>
-                    <p class="text-white-50 small"><i class="bi bi-envelope me-2 text-primary"></i> ettehad9673@gmail.com</p>
-                </div>
+   <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5 class="fw-bold mb-4">이태하드 <span class="text-primary">여행사</span></h5>
+                <p class="text-white-50 small">(주) 이태하드인터내셔널 등록 업체. 2010년부터 글로벌 이동을 위한 최상의 파트너로 함께하고 있습니다.</p>
+                <p class="text-white-50 small"><strong>사업자 번호:</strong> 106-86-71210</p>
             </div>
-            <hr class="border-secondary">
-            <div class="text-center text-white-50 small">
-                <p class="mb-0">&copy; 2026 Ettehad Travels Seoul. All Rights Reserved.</p>
+            <div class="col-md-2 mb-4">
+                <h6 class="fw-bold mb-4">빠른 링크</h6>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">홈</a></li>
+                    <li class="mb-2"><a href="visa.html" class="text-white-50 text-decoration-none">비자 서비스</a></li>
+                    <li class="mb-2"><a href="booking.html" class="text-white-50 text-decoration-none">항공권 예약</a></li>
+                    <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">회사소개</a></li>
+                    <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">문의하기</a></li>
+                </ul>
+            </div>
+            <div class="col-md-5 mb-4 ms-auto">
+                <h6 class="fw-bold mb-4">서울 사무소</h6>
+                <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 서울특별시 용산구 우사단로10길 9 (04405)</p>
+                <p class="text-white-50 small mb-2"><i class="bi bi-telephone me-2 text-primary"></i> 02-794-9673 | 010-2235-9673</p>
+                <p class="text-white-50 small"><i class="bi bi-envelope me-2 text-primary"></i> ettehad9673@gmail.com</p>
             </div>
         </div>
-    </footer>
+        
+        <hr class="border-secondary">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start text-white-50 small">
+                <p class="mb-0">&copy; 2026 이태하드 여행사 서울. All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                <a href="../admin/login.html" class="text-white-50 text-decoration-none small opacity-50">
+                    <i class="bi bi-shield-lock me-1"></i> 관리자 로그인
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

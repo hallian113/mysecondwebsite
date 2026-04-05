@@ -27,12 +27,18 @@
         .sky-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); }
         .hero-content { position: relative; z-index: 2; }
 
-        /* Animation Classes */
         .reveal-hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal-visible { opacity: 1; transform: translateY(0); }
 
         .contact-card { transition: transform 0.3s ease; border-radius: 8px; }
         .contact-card:hover { transform: translateX(10px); }
+
+        .selection-card { cursor: pointer; transition: all 0.3s ease; border: 2px solid #eee; }
+        .selection-card:hover { border-color: #0d6efd; background: #f8f9ff; }
+        .selection-card.active { border-color: #0d6efd; background: #f0f7ff; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.1); }
+        .step-title { font-size: 0.8rem; letter-spacing: 1px; color: #0d6efd; }
+        
+        .is-invalid { border: 1.5px solid #dc3545 !important; }
     </style>
 </head>
 <body class="bg-light">
@@ -48,23 +54,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="visa.html">Visas</a></li>
-    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visa.html">Visas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active text-warning" href="contact.html">Contact</a></li>
 
-    <!-- ✅ ABOUT ADDED -->
-    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-
-    <!-- ✅ ACTIVE CONTACT (gold) -->
-    <li class="nav-item"><a class="nav-link active text-warning" href="contact.html">Contact</a></li>
-
-    <li class="nav-item ms-lg-4 d-flex align-items-center mt-3 mt-lg-0">
-        <a href="contact.html" class="flag-link" title="English"><img src="https://flagcdn.com/w40/us.png" class="flag-icon flag-active"></a>
-        <a href="kr/contact.html" class="flag-link"><img src="https://flagcdn.com/w40/kr.png" class="flag-icon"></a>
-        <a href="zh/contact.html" class="flag-link"><img src="https://flagcdn.com/w40/cn.png" class="flag-icon"></a>
-        <a href="ar/contact.html" class="flag-link"><img src="https://flagcdn.com/w40/sa.png" class="flag-icon"></a>
-    </li>
-</ul>
+                    <li class="nav-item ms-lg-4 d-flex align-items-center mt-3 mt-lg-0">
+                        <a href="contact.html" class="flag-link" title="English"><img src="https://flagcdn.com/w40/us.png" class="flag-icon flag-active"></a>
+                        <a href="kr/contact.html" class="flag-link"><img src="https://flagcdn.com/w40/kr.png" class="flag-icon"></a>
+                       
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -73,8 +74,8 @@
         <div class="sky-overlay"></div>
         <div class="container hero-content text-center">
             <span class="text-uppercase tracking-widest text-primary mb-2 d-block fw-bold">Seoul Headquarters</span>
-            <h1 class="display-4 text-white fw-bold">Get In Touch</h1>
-            <p class="text-white-50">Authorized Travel Agent | Directed by Wahed Ahmed</p>
+            <h1 class="display-4 text-white fw-bold">Consultation & Booking</h1>
+            <p class="text-white-50">Global Mobility Solutions | Directed by Wahed Ahmed</p>
         </div>
     </header>
 
@@ -91,7 +92,6 @@
                             <div>
                                 <h6 class="fw-bold mb-0">Address</h6>
                                 <p class="small text-muted mb-0">Seoul, Yongsan-Gu, Usadan-Ro 10 Gil 9</p>
-                                <p class="small text-muted mb-0">(04405), South Korea</p>
                             </div>
                         </div>
 
@@ -99,31 +99,21 @@
                             <i class="bi bi-telephone text-primary fs-4 me-3"></i>
                             <div>
                                 <h6 class="fw-bold mb-0">Direct Lines</h6>
-                                <p class="small text-muted mb-0">Cell: 010-2235-9673</p>
-                                <p class="small text-muted mb-0">Tel: 02-794-9673~4</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-center mb-4">
-                            <i class="bi bi-printer text-primary fs-4 me-3"></i>
-                            <div>
-                                <h6 class="fw-bold mb-0">Fax & Email</h6>
-                                <p class="small text-muted mb-0">Fax: 02-794-9675</p>
-                                <p class="small text-muted mb-0">ettehad9673@gmail.com</p>
+                                <p class="small text-muted mb-0">Cell: 010-2235-9673 | Tel: 02-794-9673</p>
                             </div>
                         </div>
 
                         <div class="d-flex align-items-center">
-                            <i class="bi bi-clock text-primary fs-4 me-3"></i>
+                            <i class="bi bi-envelope text-primary fs-4 me-3"></i>
                             <div>
-                                <h6 class="fw-bold mb-0">Business Hours</h6>
-                                <p class="small text-muted mb-0">Mon - Fri: 09:00 - 18:00 (KST)</p>
+                                <h6 class="fw-bold mb-0">Email</h6>
+                                <p class="small text-muted mb-0">ettehad9673@gmail.com</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-4">
-                        <h6 class="fw-bold mb-3 tracking-widest">CONNECT WITH US</h6>
+                        <h6 class="fw-bold mb-3 tracking-widest small">CONNECT WITH US</h6>
                         <div class="d-flex gap-3">
                             <a href="#" class="btn btn-outline-dark btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
                             <a href="#" class="btn btn-outline-dark btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
@@ -134,53 +124,125 @@
 
                 <div class="col-md-7 reveal-hidden">
                     <div class="p-4 p-md-5 bg-white shadow-lg border-top border-primary border-4">
-                        <h4 class="fw-bold mb-4">Send us a direct message</h4>
+                        <div class="progress mb-4" style="height: 6px;">
+                            <div id="formProgress" class="progress-bar" role="progressbar" style="width: 33.33%;"></div>
+                        </div>
+
                         <form id="contactForm">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="small fw-bold text-muted mb-1">YOUR NAME</label>
-                                    <input type="text" class="form-control border-0 bg-light p-3 shadow-none" placeholder="Enter Full Name" required>
+                            <div class="step" id="step1">
+                                <span class="step-title fw-bold text-uppercase d-block mb-2">Step 1: Identity</span>
+                                <h4 class="fw-bold mb-4">Who is traveling?</h4>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="small fw-bold text-muted mb-1">FULL NAME</label>
+                                        <input type="text" id="cust_name" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="Enter Name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="small fw-bold text-muted mb-1">PHONE NUMBER</label>
+                                        <input type="tel" id="cust_phone" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="+82 10-XXXX-XXXX" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="small fw-bold text-muted mb-1">EMAIL ADDRESS</label>
+                                        <input type="email" id="cust_email" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="Email for reply" required>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn btn-primary w-100 py-3 fw-bold rounded-0 next-btn">NEXT: SELECT SERVICE</button>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <label class="small fw-bold text-muted mb-1">EMAIL ADDRESS</label>
-                                    <input type="email" class="form-control border-0 bg-light p-3 shadow-none" placeholder="Email for reply" required>
+                            </div>
+
+                            <div class="step d-none" id="step2">
+                                <span class="step-title fw-bold text-uppercase d-block mb-2">Step 2: Service</span>
+                                <h4 class="fw-bold mb-4">What do you need help with?</h4>
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <div class="selection-card p-4 text-center h-100" onclick="selectService('Visa')">
+                                            <i class="bi bi-passport text-primary display-6"></i>
+                                            <h6 class="fw-bold mt-3">Visa Services</h6>
+                                            <p class="small text-muted mb-0">Tourist, Study, Work Visas</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="selection-card p-4 text-center h-100" onclick="selectService('Flight')">
+                                            <i class="bi bi-airplane text-primary display-6"></i>
+                                            <h6 class="fw-bold mt-3">Flight Booking</h6>
+                                            <p class="small text-muted mb-0">Premium & Economy Tickets</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex gap-2 mt-4">
+                                        <button type="button" class="btn btn-light border py-3 w-50 fw-bold rounded-0 prev-btn">BACK</button>
+                                        <button type="button" class="btn btn-primary py-3 w-50 fw-bold rounded-0 next-btn">NEXT: DETAILS</button>
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <label class="small fw-bold text-muted mb-1">MESSAGE</label>
-                                    <textarea class="form-control border-0 bg-light p-3 shadow-none" rows="5" placeholder="How can we help you with your travel plans?" required></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary w-100 py-3 fw-bold tracking-widest rounded-0">SEND TO SEOUL OFFICE</button>
+                            </div>
+
+                            <div class="step d-none" id="step3">
+                                <span class="step-title fw-bold text-uppercase d-block mb-2">Step 3: Specifics</span>
+                                <h4 class="fw-bold mb-4" id="dynamicTitle">Travel Details</h4>
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="small fw-bold text-muted mb-1">DESTINATION COUNTRY</label>
+                                        <input type="text" id="dest_country" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="e.g. UK, Canada, UAE" required>
+                                    </div>
+                                    
+                                    <div id="visaFields" class="row g-3 d-none m-0 p-0">
+                                        <div class="col-md-6">
+                                            <label class="small fw-bold text-muted mb-1">VISA TYPE</label>
+                                            <select id="visa_type" class="form-select border-0 bg-light p-3 shadow-none">
+                                                <option>Tourist</option>
+                                                <option>Business</option>
+                                                <option>Student</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="small fw-bold text-muted mb-1">PASSPORT STATUS</label>
+                                            <input type="text" id="passport_status" class="form-control border-0 bg-light p-3 shadow-none" placeholder="Valid/Expired">
+                                        </div>
+                                    </div>
+
+                                    <div id="flightFields" class="row g-3 d-none m-0 p-0">
+                                        <div class="col-md-6">
+                                            <label class="small fw-bold text-muted mb-1">DEPARTURE CITY</label>
+                                            <input type="text" id="dept_city" class="form-control border-0 bg-light p-3 shadow-none" placeholder="e.g. Seoul">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="small fw-bold text-muted mb-1">CLASS</label>
+                                            <select id="flight_class" class="form-select border-0 bg-light p-3 shadow-none">
+                                                <option>Economy</option>
+                                                <option>Business</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="small fw-bold text-muted mb-1">PREFERRED DATE</label>
+                                        <input type="date" id="pref_date" class="form-control border-0 bg-light p-3 shadow-none validate-me" required>
+                                    </div>
+
+                                    <div class="col-12 d-flex gap-2 mt-4">
+                                        <button type="button" class="btn btn-light border py-3 w-50 fw-bold rounded-0 prev-btn">BACK</button>
+                                        <button type="submit" id="submitBtn" class="btn btn-success py-3 w-50 fw-bold rounded-0">SUBMIT TO SEOUL</button>
+                                    </div>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-
-            <div class="row mt-5">
-                <div class="col-12 reveal-hidden">
-                    <div class="shadow-lg rounded overflow-hidden border-top border-primary border-4">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.633857416345!2d126.9943444!3d37.5353989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca239c87d4a6b%3A0x6b0a1d9b3d3d3d3d!2s9%20Usadan-ro%2010-gil%2C%20Yongsan-gu%2C%20Seoul!5e0!3m2!1sen!2skr!4v1700000000000!5m2!1sen!2skr" 
-                            width="100%" 
-                            height="450" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
+
+    <div class="container-fluid px-0 reveal-hidden">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.6608!2d126.9946!3d37.5342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca23677b10223%3A0x673c6838a6a2419c!2s9%20Usadan-ro%2010-gil%2C%20Yongsan-gu%2C%20Seoul!5e0!3m2!1sen!2skr!4v1641000000000" 
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
 
     <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <h5 class="fw-bold mb-4">ETTEHAD <span class="text-primary">TRAVELS</span></h5>
-                    <p class="text-white-50 small">Licensed under (주) 이태하드인터내셔널. Your elite partner for global mobility in South Korea.</p>
+                    <p class="text-white-50 small">Licensed under (주) 이태하드인터내셔널. Your elite partner for global mobility since 2010.</p>
                     <p class="text-white-50 small"><strong>Business Reg:</strong> 106-86-71210</p>
                 </div>
                 <div class="col-md-2 mb-4">
@@ -189,42 +251,156 @@
                         <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
                         <li class="mb-2"><a href="visa.html" class="text-white-50 text-decoration-none">Visas</a></li>
                         <li class="mb-2"><a href="booking.html" class="text-white-50 text-decoration-none">Bookings</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-md-5 mb-4 ms-auto text-md-end">
-                    <h6 class="fw-bold mb-4">Official Contact</h6>
-                    <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 9, Usadan-ro 10-gil, Yongsan-gu, Seoul</p>
+                <div class="col-md-5 mb-4 ms-auto">
+                    <h6 class="fw-bold mb-4">Seoul Office</h6>
+                    <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 9, Usadan-ro 10-gil, Yongsan-gu, Seoul, 04405</p>
                     <p class="text-white-50 small mb-2"><i class="bi bi-telephone me-2 text-primary"></i> 02-794-9673 | 010-2235-9673</p>
                     <p class="text-white-50 small"><i class="bi bi-envelope me-2 text-primary"></i> ettehad9673@gmail.com</p>
                 </div>
             </div>
             <hr class="border-secondary">
             <div class="text-center text-white-50 small">
-                <p class="mb-0">&copy; 2026 Ettehad Travels Seoul. All Rights Reserved.</p>
-                <p class="mt-1" style="font-size: 10px;">Managed by (주) 이태하드인터내셔널</p>
+                <p class="mb-0">© 2026 Ettehad Travels Seoul. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Scroll Reveal Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal-visible');
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // ✅ FIXED: Added your actual configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9GmNWEm_Hv1kk7Q3F98v-cUJLZzIQKrE",
+            authDomain: "ettehad-travels.firebaseapp.com",
+            databaseURL: "https://ettehad-travels-default-rtdb.firebaseio.com",
+            projectId: "ettehad-travels",
+            storageBucket: "ettehad-travels.firebasestorage.app",
+            messagingSenderId: "390958610267",
+            appId: "1:390958610267:web:ca32c3376a269e17d3cc7e",
+            measurementId: "G-4LLWVKLGP1"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const steps = document.querySelectorAll(".step");
+        const nextBtns = document.querySelectorAll(".next-btn");
+        const prevBtns = document.querySelectorAll(".prev-btn");
+        const progress = document.getElementById("formProgress");
+        let currentStep = 0;
+        let selectedService = "";
+
+        function validateStep() {
+            let isValid = true;
+            const currentInputs = steps[currentStep].querySelectorAll(".validate-me");
+            currentInputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add("is-invalid");
+                    isValid = false;
+                } else {
+                    input.classList.remove("is-invalid");
                 }
             });
-        }, { threshold: 0.1 });
+            if (currentStep === 1 && selectedService === "") {
+                alert("Please select a service (Visa or Flight) to continue.");
+                isValid = false;
+            }
+            return isValid;
+        }
 
-        document.querySelectorAll('.reveal-hidden').forEach(el => observer.observe(el));
-
-        // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert("Success! Your message has been sent to Wahed Ahmed's office. We will reply shortly.");
-            this.reset();
+        nextBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                if (validateStep()) {
+                    steps[currentStep].classList.add("d-none");
+                    currentStep++;
+                    steps[currentStep].classList.remove("d-none");
+                    updateProgress();
+                    window.scrollTo(0, 400);
+                }
+            });
         });
+
+        prevBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                steps[currentStep].classList.add("d-none");
+                currentStep--;
+                steps[currentStep].classList.remove("d-none");
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const percent = ((currentStep + 1) / steps.length) * 100;
+            progress.style.width = percent + "%";
+        }
+
+        window.selectService = function(type) {
+            selectedService = type;
+            document.querySelectorAll('.selection-card').forEach(card => card.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            const visaFields = document.getElementById('visaFields');
+            const flightFields = document.getElementById('flightFields');
+            const dynamicTitle = document.getElementById('dynamicTitle');
+            if (type === 'Visa') {
+                visaFields.classList.remove('d-none');
+                flightFields.classList.add('d-none');
+                dynamicTitle.innerText = "Visa Application Details";
+            } else {
+                flightFields.classList.remove('d-none');
+                visaFields.classList.add('d-none');
+                dynamicTitle.innerText = "Flight Booking Details";
+            }
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerText = "SENDING...";
+
+            try {
+                const formData = {
+                    fullName: document.getElementById('cust_name').value,
+                    phone: document.getElementById('cust_phone').value,
+                    email: document.getElementById('cust_email').value,
+                    serviceType: selectedService || "General Inquiry",
+                    destination: document.getElementById('dest_country').value,
+                    preferredDate: document.getElementById('pref_date').value,
+                    submittedAt: serverTimestamp()
+                };
+
+                if (selectedService === 'Visa') {
+                    formData.visaType = document.getElementById('visa_type').value;
+                    formData.passportStatus = document.getElementById('passport_status').value;
+                } else if (selectedService === 'Flight') {
+                    formData.departureCity = document.getElementById('dept_city').value;
+                    formData.flightClass = document.getElementById('flight_class').value;
+                }
+
+                await addDoc(collection(db, "contact_inquiries"), formData);
+                alert("Success! Your " + selectedService + " request has been sent to our Seoul office.");
+                location.reload(); 
+            } catch (error) {
+                console.error("Firestore Error:", error);
+                alert("Error: " + error.message);
+                submitBtn.disabled = false;
+                submitBtn.innerText = "SUBMIT TO SEOUL";
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('reveal-visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-hidden').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
