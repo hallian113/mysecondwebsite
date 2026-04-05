@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Ettehad Travels | Seoul's Premium Visa & Travel Concierge</title>
+    <meta name="description" content="Official & Licensed Travel Agency in Seoul. Specializing in premium visa services, luxury flight bookings, and global travel concierge since 2010.">
+    <meta name="keywords" content="Ettehad Travels, Seoul Travel Agency, Korea Visa Service, Luxury Travel Seoul, Flight Booking Korea">
+    <meta name="author" content="Ettehad Travels">
+    
+    <meta property="og:title" content="Ettehad Travels | Seoul's Premium Visa Concierge">
+    <meta property="og:description" content="Your elite partner for global mobility and luxury travel arrangements in South Korea.">
+    <meta property="og:image" content="assets/ettehad.png"> <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ettehad Travels | Premium Visa Services">
+    <meta name="twitter:description" content="Licensed travel corporation based in Seoul. Serving the community since 2010.">
     
     <link rel="alternate" hreflang="en" href="index.html" />
     <link rel="alternate" hreflang="ko" href="kr/index.html" />
@@ -11,47 +24,105 @@
     <link rel="alternate" hreflang="ar" href="ar/index.html" />
     <link rel="alternate" hreflang="x-default" href="index.html" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .flag-link { transition: all 0.3s ease; display: inline-block; margin: 0 6px; filter: grayscale(20%); }
-        .flag-link:hover { filter: grayscale(0%); transform: scale(1.15); }
-        .flag-icon { width: 24px; height: 16px; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); vertical-align: middle; }
-        .flag-active { border: 2px solid #0d6efd; padding: 1px; filter: grayscale(0%); }
-        
+        /* --- STEP 1: GLASSMORPHISM & DEPTH (Fixed Click Issue) --- */
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --premium-blue: #0d6efd;
+            --deep-dark: #121212;
+        }
+
+        body { font-family: 'Montserrat', sans-serif; background: #fdfdfd; overflow-x: hidden; }
+
+        .navbar {
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            background: rgba(33, 37, 41, 0.85) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            z-index: 1050;
+        }
+
+        .hero-premium {
+            position: relative;
+            background: var(--deep-dark);
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .sky-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(13, 110, 253, 0.15) 0%, rgba(0,0,0,0) 50%);
+            z-index: 1;
+        }
+
+        .airplane-container {
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
         .trust-badge-card {
-            border-left: 4px solid #0d6efd;
-            background: #f8f9fa;
-            transition: all 0.3s ease;
+            border-left: 5px solid var(--premium-blue);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 25px;
         }
-        .trust-badge-card:hover {
-            background: #fff;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+
+        .flag-link { transition: all 0.3s ease; display: inline-block; margin: 0 6px; }
+        .flag-link:hover { transform: scale(1.2); }
+        .flag-icon { width: 24px; height: 16px; object-fit: cover; border-radius: 2px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .flag-active { border: 2px solid var(--premium-blue); padding: 1px; }
+
+        .btn-premium {
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.4);
+            transition: 0.3s;
         }
-        .doc-preview {
-            transition: transform 0.3s ease;
-            cursor: zoom-in;
-            border: 1px solid #dee2e6;
-        }
-        .doc-preview:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
+        
+        .stat-number { text-shadow: 0 0 20px rgba(13, 110, 253, 0.4); }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow-sm">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="assets/ettehad.png" alt="Ettehad Travels" height="40" class="me-2">
                 <span class="fw-bold">ETTEHAD<span class="text-primary"> TRAVELS</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -66,141 +137,135 @@
                     <li class="nav-item ms-lg-4 d-flex align-items-center mt-3 mt-lg-0">
                         <a href="index.html" class="flag-link" title="English"><img src="https://flagcdn.com/w40/us.png" alt="English" class="flag-icon flag-active"></a>
                         <a href="kr/index.html" class="flag-link" title="한국어"><img src="https://flagcdn.com/w40/kr.png" alt="Korean" class="flag-icon"></a>
-
+                    </li>
 
                     <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                        <a href="contact.html" class="btn btn-primary btn-sm px-4 rounded-0 fw-bold">BOOK CONSULTATION</a>
+                        <a href="contact.html" class="btn btn-primary btn-sm px-4 rounded-pill fw-bold shadow-sm">BOOK CONSULTATION</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero-premium d-flex align-items-center">
+    <header class="hero-premium">
         <div class="sky-overlay"></div>
+        
         <div class="airplane-container">
             <img src="assets/plane.png" alt="Travel" class="airplane">
         </div>
 
-        <div class="container hero-content">
+        <div class="container hero-content-wrapper">
             <div class="row">
                 <div class="col-lg-8">
-                    <span class="text-uppercase tracking-widest text-primary mb-3 d-block fw-bold">Seoul’s Premier Gateway to the World</span>
+                    <span class="text-uppercase tracking-widest text-primary mb-3 d-block fw-bold" style="letter-spacing: 4px;">Premium Concierge</span>
                     <h1 class="display-2 text-white mb-4 fw-bold">Elevate Your<br>Travel Experience.</h1>
-                    <p class="lead text-white-50 mb-5 w-75">From the heart of Seoul, we provide bespoke visa solutions and luxury flight arrangements since 2010.</p>
+                    <p class="lead text-white mb-5 w-75 opacity-75">From the heart of Seoul, we provide bespoke visa solutions and luxury flight arrangements since 2010.</p>
                     <div class="d-flex flex-column flex-md-row gap-3">
-                        <a href="visa.html" class="btn btn-primary px-5 py-3 rounded-0 fw-bold">OUR VISA SERVICES</a>
-                        <a href="booking.html" class="btn btn-outline-light px-5 py-3 rounded-0 fw-bold">FLIGHT BOOKINGS</a>
+                        <a href="visa.html" class="btn btn-primary px-5 py-3 rounded-pill fw-bold shadow">OUR VISA SERVICES</a>
+                        <a href="booking.html" class="btn btn-outline-light btn-premium px-5 py-3 rounded-pill fw-bold">FLIGHT BOOKINGS</a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="py-5 bg-white border-bottom">
+    <section class="py-5 bg-light">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
-                <div class="col-lg-5">
+                <div class="col-lg-6">
                     <h2 class="display-5 fw-bold mb-4">Official & Licensed Agency</h2>
-                    <p class="text-muted lead mb-4">Ettehad Travels (주) 이태하드인터내셔널 is a fully authorized travel corporation based in Seoul. Serving the community since April 2010 with legal excellence.</p>
+                    <p class="text-muted lead mb-4">Ettehad Travels (주) 이태하드인터내셔널 is a fully authorized travel corporation based in Seoul. Serving the community with legal excellence for over a decade.</p>
                     
-                    <div class="p-4 trust-badge-card mb-4">
-                        <h6 class="fw-bold text-uppercase small text-primary mb-3">Verified Business Info</h6>
-                        <div class="row small text-muted">
-                            <div class="col-12 mb-2"><i class="bi bi-patch-check-fill text-primary me-2"></i><strong>Reg No:</strong> 106-86-71210</div>
-                            <div class="col-12 mb-2"><i class="bi bi-person-circle text-primary me-2"></i><strong>Director:</strong> Wahed Ahmed</div>
-                            <div class="col-12 mb-2"><i class="bi bi-bank2 text-primary me-2"></i><strong>Official Bank:</strong> Kookmin Bank</div>
-                            <div class="col-12"><i class="bi bi-geo-alt-fill text-primary me-2"></i><strong>Seoul HQ:</strong> Yongsan-gu, Seoul</div>
-                        </div>
-                    </div>
-                    
-                    <div class="row g-3 text-center">
-                        <div class="col-6">
-                            <div class="p-3 border bg-light">
-                                <h3 class="fw-bold text-primary mb-0">2010</h3>
-                                <p class="small text-muted mb-0">Year Established</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="p-3 border bg-light">
-                                <h3 class="fw-bold text-primary mb-0">100%</h3>
-                                <p class="small text-muted mb-0">Legal Compliance</p>
-                            </div>
+                    <div class="trust-badge-card shadow-sm mb-4">
+                        <h6 class="fw-bold text-uppercase small text-primary mb-3">Verified Business Identity</h6>
+                        <div class="row g-3 small text-muted">
+                            <div class="col-md-6"><i class="bi bi-patch-check-fill text-primary me-2"></i><strong>Reg No:</strong> 106-86-71210</div>
+                            <div class="col-md-6"><i class="bi bi-person-circle text-primary me-2"></i><strong>Director:</strong> Wahed Ahmed</div>
+                            <div class="col-md-6"><i class="bi bi-bank2 text-primary me-2"></i><strong>Bank:</strong> Kookmin Bank</div>
+                            <div class="col-md-6"><i class="bi bi-geo-alt-fill text-primary me-2"></i><strong>HQ:</strong> Yongsan-gu, Seoul</div>
                         </div>
                     </div>
                 </div>
 
-                
-                        
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="glass-card p-4 text-center">
+                                <h3 class="fw-bold text-primary mb-0">2010</h3>
+                                <p class="small text-muted mb-0 font-weight-bold">Established</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="glass-card p-4 text-center">
+                                <h3 class="fw-bold text-primary mb-0">100%</h3>
+                                <p class="small text-muted mb-0">Compliant</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-dark text-white">
-        <div class="container">
+    <section class="py-5 bg-dark text-white overflow-hidden position-relative">
+        <div class="container position-relative z-1">
             <div class="row text-center g-4">
                 <div class="col-6 col-md-3">
-                    <h2 class="display-5 fw-bold text-primary mb-0">10k+</h2>
+                    <h2 class="display-5 fw-bold text-primary mb-0 stat-number">10k+</h2>
                     <p class="text-uppercase small tracking-widest text-white-50 mt-2">Visas Approved</p>
                 </div>
                 <div class="col-6 col-md-3">
-                    <h2 class="display-5 fw-bold text-primary mb-0">15+</h2>
+                    <h2 class="display-5 fw-bold text-primary mb-0 stat-number">15+</h2>
                     <p class="text-uppercase small tracking-widest text-white-50 mt-2">Years Experience</p>
                 </div>
                 <div class="col-6 col-md-3">
-                    <h2 class="display-5 fw-bold text-primary mb-0">50+</h2>
+                    <h2 class="display-5 fw-bold text-primary mb-0 stat-number">50+</h2>
                     <p class="text-uppercase small tracking-widest text-white-50 mt-2">Destinations</p>
                 </div>
                 <div class="col-6 col-md-3">
-                    <h2 class="display-5 fw-bold text-primary mb-0">99%</h2>
+                    <h2 class="display-5 fw-bold text-primary mb-0 stat-number">99%</h2>
                     <p class="text-uppercase small tracking-widest text-white-50 mt-2">Success Rate</p>
                 </div>
             </div>
         </div>
     </section>
 
-   <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <h5 class="fw-bold mb-4">ETTEHAD <span class="text-primary">TRAVELS</span></h5>
-                <p class="text-white-50 small">Licensed under (주) 이태하드인터내셔널. Your elite partner for global mobility since 2010.</p>
-                <p class="text-white-50 small"><strong>Business Reg:</strong> 106-86-71210</p>
+    <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-4">ETTEHAD <span class="text-primary">TRAVELS</span></h5>
+                    <p class="text-white-50 small">Licensed under (주) 이태하드인터내셔널. Your elite partner for global mobility since 2010.</p>
+                    <p class="text-white-50 small"><strong>Business Reg:</strong> 106-86-71210</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold mb-4">Corporate Info</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                        <li class="mb-2"><a href="admin/login.html" class="text-white-50 text-decoration-none">Staff Access</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5 mb-4 ms-auto text-md-end">
+                    <h6 class="fw-bold mb-4">Seoul Office</h6>
+                    <p class="text-white-50 small mb-2">9, Usadan-ro 10-gil, Yongsan-gu, Seoul, 04405 <i class="bi bi-geo-alt ms-2 text-primary"></i></p>
+                    <p class="text-white-50 small mb-2">02-794-9673 | 010-2235-9673 <i class="bi bi-telephone ms-2 text-primary"></i></p>
+                    <p class="text-white-50 small">ettehad9673@gmail.com <i class="bi bi-envelope ms-2 text-primary"></i></p>
+                </div>
             </div>
-            <div class="col-md-2 mb-4">
-                <h6 class="fw-bold mb-4">Quick Links</h6>
-                <ul class="list-unstyled small">
-                    <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
-                    <li class="mb-2"><a href="visa.html" class="text-white-50 text-decoration-none">Visas</a></li>
-                    <li class="mb-2"><a href="booking.html" class="text-white-50 text-decoration-none">Bookings</a></li>
-                    <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
-                    <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-md-5 mb-4 ms-auto">
-                <h6 class="fw-bold mb-4">Seoul Office</h6>
-                <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 9, Usadan-ro 10-gil, Yongsan-gu, Seoul, 04405</p>
-                <p class="text-white-50 small mb-2"><i class="bi bi-telephone me-2 text-primary"></i> 02-794-9673 | 010-2235-9673</p>
-                <p class="text-white-50 small"><i class="bi bi-envelope me-2 text-primary"></i> ettehad9673@gmail.com</p>
-            </div>
-        </div>
-        
-        <hr class="border-secondary">
+            
+            <hr class="border-secondary my-4">
 
-        <div class="row align-items-center">
-            <div class="col-md-6 text-center text-md-start text-white-50 small">
-                <p class="mb-0">&copy; 2026 Ettehad Travels Seoul. All Rights Reserved.</p>
-            </div>
-            <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
-                <a href="admin/login.html" class="text-white-50 text-decoration-none small opacity-50">
-                    <i class="bi bi-shield-lock me-1"></i> Staff Login
-                </a>
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start text-white-50 small">
+                    <p class="mb-0">&copy; 2026 Ettehad Travels Seoul. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <span class="text-white-50 small opacity-50">Authorized Travel Partner</span>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
