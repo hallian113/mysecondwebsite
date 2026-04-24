@@ -13,8 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
-
+    
     <style>
         body { font-family: 'Montserrat', sans-serif; }
         .flag-link { transition: all 0.3s ease; display: inline-block; margin: 0 6px; filter: grayscale(20%); }
@@ -33,22 +32,29 @@
         .contact-card { transition: transform 0.3s ease; border-radius: 8px; }
         .contact-card:hover { transform: translateX(10px); }
 
-        .selection-card { cursor: pointer; transition: all 0.3s ease; border: 2px solid #eee; }
+        .selection-card { cursor: pointer; transition: all 0.3s ease; border: 2px solid #eee; border-radius: 12px; }
         .selection-card:hover { border-color: #0d6efd; background: #f8f9ff; }
         .selection-card.active { border-color: #0d6efd; background: #f0f7ff; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.1); }
+
+        .trip-card { cursor: pointer; transition: all 0.3s ease; border: 2px solid #eee; border-radius: 10px; padding: 14px 20px; text-align: center; }
+        .trip-card:hover { border-color: #0d6efd; background: #f8f9ff; }
+        .trip-card.active { border-color: #0d6efd; background: #e8f0fe; box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15); }
+        .trip-card .trip-icon { font-size: 1.5rem; color: #6c757d; transition: color 0.3s ease; }
+        .trip-card.active .trip-icon { color: #0d6efd; }
+        .trip-card .trip-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0; color: #495057; transition: color 0.3s ease; }
+        .trip-card.active .trip-label { color: #0d6efd; }
+
+        .return-date-wrapper { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease; margin-top: 0; }
+        .return-date-wrapper.show { max-height: 120px; opacity: 1; margin-top: 12px; }
+
         .step-title { font-size: 0.8rem; letter-spacing: 1px; color: #0d6efd; }
         
         .is-invalid { border: 1.5px solid #dc3545 !important; }
+        .invalid-feedback-custom { color: #dc3545; font-size: 0.78rem; margin-top: 4px; display: none; }
+        .is-invalid + .invalid-feedback-custom { display: block; }
 
-        /* Premium Success Screen Styles */
-        #successScreen {
-            animation: fadeIn 0.6s ease-out;
-        }
-        .success-icon {
-            font-size: 4rem;
-            color: #198754;
-            animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+        #successScreen { animation: fadeIn 0.6s ease-out; }
+        .success-icon { font-size: 4rem; color: #198754; animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes scaleIn { from { transform: scale(0); } to { transform: scale(1); } }
     </style>
@@ -59,7 +65,7 @@
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
                 <img src="assets/ettehad.png" alt="Ettehad Travels" height="40" class="me-2">
-                <span>ETTEHAD<span class="text-primary"> TRAVELS</span></span>
+                <span>ETTEHAD<span class="text-warning"> TRAVELS</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -71,7 +77,6 @@
                     <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link active text-warning" href="contact.html">Contact</a></li>
-
                     <li class="nav-item ms-lg-4 d-flex align-items-center mt-3 mt-lg-0">
                         <a href="contact.html" class="flag-link" title="English"><img src="https://flagcdn.com/w40/us.png" class="flag-icon flag-active"></a>
                         <a href="kr/contact.html" class="flag-link"><img src="https://flagcdn.com/w40/kr.png" class="flag-icon"></a>
@@ -84,7 +89,7 @@
     <header class="hero-premium d-flex align-items-center">
         <div class="sky-overlay"></div>
         <div class="container hero-content text-center">
-            <span class="text-uppercase tracking-widest text-primary mb-2 d-block fw-bold">Seoul Headquarters</span>
+            <span class="text-uppercase tracking-widest text-warning mb-2 d-block fw-bold">Seoul Headquarters</span>
             <h1 class="display-4 text-white fw-bold">Consultation & Booking</h1>
             <p class="text-white-50">Global Mobility Solutions | Directed by Wahed Ahmed</p>
         </div>
@@ -93,29 +98,28 @@
     <section class="py-5">
         <div class="container py-5">
             <div class="row g-5">
+                <!-- Contact Info -->
                 <div class="col-md-5 reveal-hidden">
                     <h2 class="fw-bold mb-4">Visit Our Office</h2>
                     <p class="text-muted mb-5">Our director, <strong>Wahed Ahmed</strong>, and the team are here to provide expert consultancy for your flights, visas, and passport requirements.</p>
                     
-                    <div class="contact-card p-4 bg-white shadow-sm mb-4 border-start border-primary border-4">
+                    <div class="contact-card p-4 bg-white shadow-sm mb-4 border-start border-warning border-4">
                         <div class="d-flex align-items-center mb-4">
-                            <i class="bi bi-geo-alt text-primary fs-4 me-3"></i>
+                            <i class="bi bi-geo-alt text-warning fs-4 me-3"></i>
                             <div>
                                 <h6 class="fw-bold mb-0">Address</h6>
                                 <p class="small text-muted mb-0">Seoul, Yongsan-Gu, Usadan-Ro 10 Gil 9</p>
                             </div>
                         </div>
-
                         <div class="d-flex align-items-center mb-4">
-                            <i class="bi bi-telephone text-primary fs-4 me-3"></i>
+                            <i class="bi bi-telephone text-warning ` fs-4 me-3"></i>
                             <div>
                                 <h6 class="fw-bold mb-0">Direct Lines</h6>
                                 <p class="small text-muted mb-0">Cell: 010-2235-9673 | Tel: 02-794-9673</p>
                             </div>
                         </div>
-
                         <div class="d-flex align-items-center">
-                            <i class="bi bi-envelope text-primary fs-4 me-3"></i>
+                            <i class="bi bi-envelope text-warning fs-4 me-3"></i>
                             <div>
                                 <h6 class="fw-bold mb-0">Email</h6>
                                 <p class="small text-muted mb-0">ettehad9673@gmail.com</p>
@@ -133,6 +137,7 @@
                     </div>
                 </div>
 
+                <!-- Form Section -->
                 <div class="col-md-7 reveal-hidden">
                     <div class="p-4 p-md-5 bg-white shadow-lg border-top border-primary border-4" id="formContainer">
                         <div class="progress mb-4" id="progressWrapper" style="height: 6px;">
@@ -141,9 +146,8 @@
 
                         <form id="contactForm">
                             <input type="hidden" name="access_key" value="b45d75ad-f429-41fd-989f-6a7ebab6e764">
-                            <input type="hidden" name="from_name" value="Ettehad Travels Website">
-                            <input type="hidden" name="subject" value="New Inquiry - Ettehad Travels Seoul">
-
+                            
+                            <!-- STEP 1 -->
                             <div class="step" id="step1">
                                 <span class="step-title fw-bold text-uppercase d-block mb-2">Step 1: Identity</span>
                                 <h4 class="fw-bold mb-4">Who is traveling?</h4>
@@ -151,14 +155,17 @@
                                     <div class="col-md-6">
                                         <label class="small fw-bold text-muted mb-1">FULL NAME</label>
                                         <input type="text" name="name" id="cust_name" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="Enter Name" required>
+                                        <div class="invalid-feedback-custom">Please enter your name.</div>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="small fw-bold text-muted mb-1">PHONE NUMBER</label>
                                         <input type="tel" name="phone" id="cust_phone" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="+82 10-XXXX-XXXX" required>
+                                        <div class="invalid-feedback-custom">Please enter your phone number.</div>
                                     </div>
                                     <div class="col-12">
                                         <label class="small fw-bold text-muted mb-1">EMAIL ADDRESS</label>
                                         <input type="email" name="email" id="cust_email" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="Email for reply" required>
+                                        <div class="invalid-feedback-custom">Please enter a valid email.</div>
                                     </div>
                                     <div class="col-12 mt-4">
                                         <button type="button" class="btn btn-primary w-100 py-3 fw-bold rounded-0 next-btn">NEXT: SELECT SERVICE</button>
@@ -166,20 +173,21 @@
                                 </div>
                             </div>
 
+                            <!-- STEP 2 -->
                             <div class="step d-none" id="step2">
                                 <span class="step-title fw-bold text-uppercase d-block mb-2">Step 2: Service</span>
                                 <h4 class="fw-bold mb-4">What do you need help with?</h4>
                                 <div class="row g-3">
                                     <div class="col-sm-6">
                                         <div class="selection-card p-4 text-center h-100" onclick="selectService('Visa')">
-                                            <i class="bi bi-passport text-primary display-6"></i>
+                                            <i class="bi bi-passport text-warning display-6"></i>
                                             <h6 class="fw-bold mt-3">Visa Services</h6>
                                             <p class="small text-muted mb-0">Tourist, Study, Work Visas</p>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="selection-card p-4 text-center h-100" onclick="selectService('Flight')">
-                                            <i class="bi bi-airplane text-primary display-6"></i>
+                                            <i class="bi bi-airplane text-warning display-6"></i>
                                             <h6 class="fw-bold mt-3">Flight Booking</h6>
                                             <p class="small text-muted mb-0">Premium & Economy Tickets</p>
                                         </div>
@@ -191,52 +199,93 @@
                                 </div>
                             </div>
 
+                            <!-- STEP 3 -->
                             <div class="step d-none" id="step3">
-                                <span class="step-title fw-bold text-uppercase d-block mb-2">Step 3: Specifics</span>
+                                <span class="step-title fw-bold text-uppercase d-block mb-2">Step 3: Details</span>
                                 <h4 class="fw-bold mb-4" id="dynamicTitle">Travel Details</h4>
                                 <div class="row g-3">
                                     <div class="col-12">
                                         <label class="small fw-bold text-muted mb-1">DESTINATION COUNTRY</label>
                                         <input type="text" name="destination" id="dest_country" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="e.g. UK, Canada, UAE" required>
+                                        <div class="invalid-feedback-custom">Please enter destination.</div>
                                     </div>
-                                    
+
+                                    <!-- Visa Specific Fields -->
                                     <div id="visaFields" class="row g-3 d-none m-0 p-0">
                                         <div class="col-md-6">
                                             <label class="small fw-bold text-muted mb-1">VISA TYPE</label>
-                                            <select name="visa_type" id="visa_type" class="form-select border-0 bg-light p-3 shadow-none">
+                                            <select name="visa_type" class="form-select border-0 bg-light p-3 shadow-none">
                                                 <option>Tourist</option>
                                                 <option>Business</option>
                                                 <option>Student</option>
+                                                <option>Work</option>
                                             </select>
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="small fw-bold text-muted mb-1">PASSPORT STATUS</label>
-                                            <input type="text" name="passport_status" id="passport_status" class="form-control border-0 bg-light p-3 shadow-none" placeholder="Valid/Expired">
+                                            <label class="small fw-bold text-muted mb-1">VISA CATEGORY</label>
+                                            <input type="text" name="visa_category" class="form-control border-0 bg-light p-3 shadow-none" placeholder="Single/Multiple Entry">
                                         </div>
                                     </div>
 
+                                    <!-- Flight Specific Fields -->
                                     <div id="flightFields" class="row g-3 d-none m-0 p-0">
+                                        <!-- Trip Type: One Way / Two Way -->
+                                        <div class="col-12">
+                                            <label class="small fw-bold text-muted mb-2 d-block">TRIP TYPE</label>
+                                            <div class="row g-2">
+                                                <div class="col-6">
+                                                    <div class="trip-card active" id="tripOneWay" onclick="selectTripType('One Way')">
+                                                        <i class="bi bi-arrow-right trip-icon d-block mb-1"></i>
+                                                        <span class="trip-label">One Way</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="trip-card" id="tripTwoWay" onclick="selectTripType('Two Way')">
+                                                        <i class="bi bi-arrow-left-right trip-icon d-block mb-1"></i>
+                                                        <span class="trip-label">Two Way</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="col-md-6">
                                             <label class="small fw-bold text-muted mb-1">DEPARTURE CITY</label>
-                                            <input type="text" name="departure_city" id="dept_city" class="form-control border-0 bg-light p-3 shadow-none" placeholder="e.g. Seoul">
+                                            <input type="text" name="departure_city" class="form-control border-0 bg-light p-3 shadow-none" placeholder="e.g. Seoul">
                                         </div>
                                         <div class="col-md-6">
+                                            <label class="small fw-bold text-muted mb-1">ARRIVAL CITY</label>
+                                            <input type="text" name="arrival_city" class="form-control border-0 bg-light p-3 shadow-none" placeholder="e.g. London">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="small fw-bold text-muted mb-1">DEPARTURE DATE</label>
+                                            <input type="date" name="departure_date" id="pref_date" class="form-control border-0 bg-light p-3 shadow-none">
+                                        </div>
+
+                                        <!-- Return Date — sirf Two Way mein dikhega -->
+                                        <div class="col-md-6 return-date-wrapper" id="returnDateWrapper">
+                                            <label class="small fw-bold text-muted mb-1">RETURN DATE <span class="text-danger">*</span></label>
+                                            <input type="date" name="return_date" id="return_date" class="form-control border-0 bg-light p-3 shadow-none validate-me">
+                                            <div class="invalid-feedback-custom">Return date is required for Two Way trip.</div>
+                                        </div>
+
+                                        <div class="col-md-6">
                                             <label class="small fw-bold text-muted mb-1">CLASS</label>
-                                            <select name="flight_class" id="flight_class" class="form-select border-0 bg-light p-3 shadow-none">
+                                            <select name="flight_class" class="form-select border-0 bg-light p-3 shadow-none">
                                                 <option>Economy</option>
                                                 <option>Business</option>
+                                                <option>First Class</option>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="col-12">
-                                        <label class="small fw-bold text-muted mb-1">PREFERRED DATE</label>
-                                        <input type="date" name="preferred_date" id="pref_date" class="form-control border-0 bg-light p-3 shadow-none validate-me" required>
+                                        <label class="small fw-bold text-muted mb-1">ADDITIONAL MESSAGE</label>
+                                        <textarea name="message" id="message" class="form-control border-0 bg-light p-3 shadow-none" rows="3" placeholder="Write your inquiry..."></textarea>
                                     </div>
 
                                     <div class="col-12 d-flex gap-2 mt-4">
                                         <button type="button" class="btn btn-light border py-3 w-50 fw-bold rounded-0 prev-btn">BACK</button>
-                                        <button type="submit" id="submitBtn" class="btn btn-success py-3 w-50 fw-bold rounded-0">SUBMIT TO SEOUL</button>
+                                        <button type="submit" id="submitBtn" class="btn btn-success py-3 w-50 fw-bold rounded-0">SEND INQUIRY</button>
                                     </div>
                                 </div>
                             </div>
@@ -247,26 +296,26 @@
                                 <i class="bi bi-check-circle-fill success-icon"></i>
                             </div>
                             <h3 class="fw-bold mb-2">Request Received!</h3>
-                            <p class="text-muted mb-4">Thank you for choosing Ettehad Travels. Your inquiry has been sent to our Seoul office. Our team will contact you shortly.</p>
+                            <p class="text-muted mb-4">Your inquiry has been sent to our Seoul office. Our team will contact you shortly.</p>
                             <button onclick="location.reload()" class="btn btn-outline-primary px-4 rounded-0 fw-bold">DONE</button>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Map Section -->
     <div class="container-fluid px-0 reveal-hidden">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.484197415494!2d126.9930!3d37.5340!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2367d36391d%3A0xc3049b4c02f74154!2sUsadan-ro%2010-gil%2C%20Yongsan-gu%2C%20Seoul!5e0!3m2!1sen!2skr!4v1710000000000" 
             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
-    <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
+   <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h5 class="fw-bold mb-4">ETTEHAD <span class="text-primary">TRAVELS</span></h5>
+                    <h5 class="fw-bold mb-4">ETTEHAD <span class="text-warning">TRAVELS</span></h5>
                     <p class="text-white-50 small">Licensed under (주) 이태하드인터내셔널. Your elite partner for global mobility since 2010.</p>
                     <p class="text-white-50 small"><strong>Business Reg:</strong> 106-86-71210</p>
                 </div>
@@ -281,15 +330,15 @@
                     </ul>
                 </div>
                 <div class="col-md-5 mb-4 ms-auto">
-                    <h6 class="fw-bold mb-4">Seoul Office</h6>
-                    <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 9, Usadan-ro 10-gil, Yongsan-gu, Seoul, 04405</p>
-                    <p class="text-white-50 small mb-2"><i class="bi bi-telephone me-2 text-primary"></i> 02-794-9673 | 010-2235-9673</p>
-                    <p class="text-white-50 small"><i class="bi bi-envelope me-2 text-primary"></i> ettehad9673@gmail.com</p>
+                    <h6 class="fw-bold mb-4">Contact Seoul Office</h6>
+                    <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i> 9, Usadan-ro 10-gil, Yongsan-gu, Seoul, 04405</p>
+                    <p class="text-white-50 small mb-2"><i class="bi bi-telephone me-2 text-warning"></i> 02-794-9673 | 010-2235-9673</p>
+                    <p class="text-white-50 small"><i class="bi bi-envelope me-2 text-warning"></i> ettehad9673@gmail.com</p>
                 </div>
             </div>
             <hr class="border-secondary">
             <div class="text-center text-white-50 small">
-                <p class="mb-0">© 2026 Ettehad Travels Seoul. All Rights Reserved.</p>
+                <p class="mb-0">&copy; 2026 Ettehad Travels Seoul. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -318,6 +367,7 @@
         const progress = document.getElementById("formProgress");
         let currentStep = 0;
         let selectedService = "";
+        let selectedTripType = "One Way";
 
         function validateStep() {
             let isValid = true;
@@ -330,10 +380,41 @@
                     input.classList.remove("is-invalid");
                 }
             });
+
+            // Step 1: email format check
+            if (currentStep === 0) {
+                const emailInput = document.getElementById('cust_email');
+                if (emailInput.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+                    emailInput.classList.add("is-invalid");
+                    emailInput.nextElementSibling.textContent = "Please enter a valid email address.";
+                    isValid = false;
+                }
+            }
+
+            // Step 1: service selection check
             if (currentStep === 1 && selectedService === "") {
-                alert("Please select a service (Visa or Flight) to continue.");
+                alert("Please select a service to continue.");
                 isValid = false;
             }
+
+            // Step 2: Flight Two Way return date check
+            if (currentStep === 2 && selectedService === 'Flight' && selectedTripType === 'Two Way') {
+                const returnDate = document.getElementById('return_date');
+                if (!returnDate.value.trim()) {
+                    returnDate.classList.add("is-invalid");
+                    isValid = false;
+                } else {
+                    returnDate.classList.remove("is-invalid");
+                }
+                // Also check return date is after departure date
+                const depDate = document.getElementById('pref_date');
+                if (depDate.value && returnDate.value && returnDate.value <= depDate.value) {
+                    returnDate.classList.add("is-invalid");
+                    returnDate.nextElementSibling.textContent = "Return date must be after departure date.";
+                    isValid = false;
+                }
+            }
+
             return isValid;
         }
 
@@ -367,9 +448,11 @@
             selectedService = type;
             document.querySelectorAll('.selection-card').forEach(card => card.classList.remove('active'));
             event.currentTarget.classList.add('active');
+            
             const visaFields = document.getElementById('visaFields');
             const flightFields = document.getElementById('flightFields');
             const dynamicTitle = document.getElementById('dynamicTitle');
+            
             if (type === 'Visa') {
                 visaFields.classList.remove('d-none');
                 flightFields.classList.add('d-none');
@@ -378,62 +461,130 @@
                 flightFields.classList.remove('d-none');
                 visaFields.classList.add('d-none');
                 dynamicTitle.innerText = "Flight Booking Details";
+                // Reset trip type to One Way when switching to Flight
+                selectTripType('One Way');
+            }
+        }
+
+        window.selectTripType = function(type) {
+            selectedTripType = type;
+            const oneWayCard = document.getElementById('tripOneWay');
+            const twoWayCard = document.getElementById('tripTwoWay');
+            const returnDateWrapper = document.getElementById('returnDateWrapper');
+            const returnDateInput = document.getElementById('return_date');
+
+            if (type === 'One Way') {
+                oneWayCard.classList.add('active');
+                twoWayCard.classList.remove('active');
+                returnDateWrapper.classList.remove('show');
+                // Remove required, clear value, remove invalid state
+                returnDateInput.removeAttribute('required');
+                returnDateInput.value = '';
+                returnDateInput.classList.remove('is-invalid');
+            } else {
+                twoWayCard.classList.add('active');
+                oneWayCard.classList.remove('active');
+                returnDateWrapper.classList.add('show');
+                // Make required for Two Way
+                returnDateInput.setAttribute('required', 'true');
             }
         }
 
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+
+            // Final validation for Two Way return date
+            if (selectedService === 'Flight' && selectedTripType === 'Two Way') {
+                const returnDate = document.getElementById('return_date');
+                if (!returnDate.value.trim()) {
+                    returnDate.classList.add("is-invalid");
+                    return;
+                }
+                const depDate = document.getElementById('pref_date');
+                if (depDate.value && returnDate.value <= depDate.value) {
+                    returnDate.classList.add("is-invalid");
+                    returnDate.nextElementSibling.textContent = "Return date must be after departure date.";
+                    return;
+                }
+            }
+
             const submitBtn = document.getElementById('submitBtn');
-            const formElement = e.target;
-            const progressWrapper = document.getElementById('progressWrapper');
-            const successScreen = document.getElementById('successScreen');
-            
             submitBtn.disabled = true;
             submitBtn.innerText = "SENDING...";
 
-            const formData = new FormData(formElement);
+            const formData = new FormData(this);
             formData.append("Selected_Service", selectedService);
+            formData.append("Trip_Type", selectedTripType);
 
             try {
-                // 1. SAVE TO FIREBASE
-                const firestoreData = {
+                // Save to Firebase
+                const firebaseData = {
                     fullName: document.getElementById('cust_name').value,
                     phone: document.getElementById('cust_phone').value,
                     email: document.getElementById('cust_email').value,
-                    serviceType: selectedService || "General Inquiry",
+                    service: selectedService,
                     destination: document.getElementById('dest_country').value,
-                    preferredDate: document.getElementById('pref_date').value,
                     submittedAt: serverTimestamp()
                 };
 
-                await addDoc(collection(db, "contact_inquiries"), firestoreData);
+                // Add flight-specific fields
+                if (selectedService === 'Flight') {
+                    firebaseData.tripType = selectedTripType;
+                    const depCity = document.querySelector('[name="departure_city"]').value;
+                    const arrCity = document.querySelector('[name="arrival_city"]').value;
+                    const depDate = document.getElementById('pref_date').value;
+                    const flightClass = document.querySelector('[name="flight_class"]').value;
+                    if (depCity) firebaseData.departureCity = depCity;
+                    if (arrCity) firebaseData.arrivalCity = arrCity;
+                    if (depDate) firebaseData.departureDate = depDate;
+                    if (flightClass) firebaseData.flightClass = flightClass;
+                    if (selectedTripType === 'Two Way') {
+                        firebaseData.returnDate = document.getElementById('return_date').value;
+                    }
+                }
 
-                // 2. SEND TO WEB3FORMS
+                // Add visa-specific fields
+                if (selectedService === 'Visa') {
+                    const visaType = document.querySelector('[name="visa_type"]').value;
+                    const visaCat = document.querySelector('[name="visa_category"]').value;
+                    if (visaType) firebaseData.visaType = visaType;
+                    if (visaCat) firebaseData.visaCategory = visaCat;
+                }
+
+                const message = document.getElementById('message').value;
+                if (message) firebaseData.message = message;
+
+                await addDoc(collection(db, "contact_inquiries"), firebaseData);
+
+                // Send to Web3Forms
                 const object = Object.fromEntries(formData);
                 const response = await fetch("https://api.web3forms.com/submit", {
                     method: "POST",
-                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(object)
                 });
 
                 if (response.ok) {
-                    // SHOW PREMIUM SUCCESS SCREEN
-                    formElement.classList.add('d-none');
-                    progressWrapper.classList.add('d-none');
-                    successScreen.classList.remove('d-none');
-                } else {
-                    alert("Information saved, but notification failed. We will contact you soon!");
-                    location.reload();
+                    document.getElementById('contactForm').classList.add('d-none');
+                    document.getElementById('progressWrapper').classList.add('d-none');
+                    document.getElementById('successScreen').classList.remove('d-none');
                 }
-
             } catch (error) {
-                console.error("Error:", error);
-                alert("Something went wrong. Please check your connection.");
+                console.error(error);
+                alert("Error sending request. Please try again.");
                 submitBtn.disabled = false;
-                submitBtn.innerText = "SUBMIT TO SEOUL";
+                submitBtn.innerText = "SEND INQUIRY";
             }
         });
 
+        // Remove invalid state on input
+        document.querySelectorAll('.validate-me').forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('is-invalid');
+            });
+        });
+
+        // Intersection Observer for animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('reveal-visible');

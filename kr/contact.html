@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>문의하기 | 이태하드 여행사 (Ettehad Travels Seoul)</title>
+    <title>문의하기 | 이태하드 트래블 서울</title>
 
-    <link rel="alternate" hreflang="en" href="../contact.html" />
-    <link rel="alternate" hreflang="ko" href="contact.html" />
+    <link rel="alternate" hreflang="en" href="contact.html" />
+    <link rel="alternate" hreflang="ko" href="kr/contact.html" />
+    <link rel="alternate" hreflang="zh" href="zh/contact.html" />
+    <link rel="alternate" hreflang="ar" href="ar/contact.html" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../style.css">
-
+    
     <style>
-        body { font-family: 'Noto Sans KR', sans-serif; }
+        body { font-family: 'Noto Sans KR', 'Montserrat', sans-serif; }
         .flag-link { transition: all 0.3s ease; display: inline-block; margin: 0 6px; filter: grayscale(20%); }
         .flag-link:hover { filter: grayscale(0%); transform: scale(1.15); }
         .flag-icon { width: 24px; height: 16px; object-fit: cover; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); vertical-align: middle; }
@@ -31,12 +32,26 @@
         .contact-card { transition: transform 0.3s ease; border-radius: 8px; }
         .contact-card:hover { transform: translateX(10px); }
 
-        .selection-card { cursor: pointer; transition: all 0.3s ease; border: 2px solid #eee; }
+        .selection-card { cursor: pointer; transition: all 0.3s ease; border: 2px solid #eee; border-radius: 12px; }
         .selection-card:hover { border-color: #0d6efd; background: #f8f9ff; }
         .selection-card.active { border-color: #0d6efd; background: #f0f7ff; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.1); }
+
+        .trip-card { cursor: pointer; transition: all 0.3s ease; border: 2px solid #eee; border-radius: 10px; padding: 14px 20px; text-align: center; }
+        .trip-card:hover { border-color: #0d6efd; background: #f8f9ff; }
+        .trip-card.active { border-color: #0d6efd; background: #e8f0fe; box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15); }
+        .trip-card .trip-icon { font-size: 1.5rem; color: #6c757d; transition: color 0.3s ease; }
+        .trip-card.active .trip-icon { color: #0d6efd; }
+        .trip-card .trip-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0; color: #495057; transition: color 0.3s ease; }
+        .trip-card.active .trip-label { color: #0d6efd; }
+
+        .return-date-wrapper { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease; margin-top: 0; }
+        .return-date-wrapper.show { max-height: 120px; opacity: 1; margin-top: 12px; }
+
         .step-title { font-size: 0.8rem; letter-spacing: 1px; color: #0d6efd; }
         
         .is-invalid { border: 1.5px solid #dc3545 !important; }
+        .invalid-feedback-custom { color: #dc3545; font-size: 0.78rem; margin-top: 4px; display: none; }
+        .is-invalid + .invalid-feedback-custom { display: block; }
 
         #successScreen { animation: fadeIn 0.6s ease-out; }
         .success-icon { font-size: 4rem; color: #198754; animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
@@ -49,8 +64,8 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <img src="../assets/ettehad.png" alt="Ettehad Travels" height="40" class="me-2">
-                <span>이태하드<span class="text-primary"> 여행사</span></span>
+                <img src="../assets/ettehad.png" alt="이태하드 트래블" height="40" class="me-2">
+                <span>ETTEHAD<span class="text-warning"> TRAVELS</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -58,14 +73,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">홈</a></li>
-                    <li class="nav-item"><a class="nav-link" href="visa.html">비자 서비스</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visa.html">비자</a></li>
                     <li class="nav-item"><a class="nav-link" href="booking.html">예약</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">회사 소개</a></li>
-                    <li class="nav-item"><a class="nav-link active text-warning" href="contact.html">문의하기</a></li>
-
+                    <li class="nav-item"><a class="nav-link" href="about.html">소개</a></li>
+                    <li class="nav-item"><a class="nav-link active text-warning" href="contact.html">문의</a></li>
                     <li class="nav-item ms-lg-4 d-flex align-items-center mt-3 mt-lg-0">
                         <a href="../contact.html" class="flag-link" title="English"><img src="https://flagcdn.com/w40/us.png" class="flag-icon"></a>
-                        <a href="contact.html" class="flag-link" title="Korean"><img src="https://flagcdn.com/w40/kr.png" class="flag-icon flag-active"></a>
+                        <a href="contact.html" class="flag-link"><img src="https://flagcdn.com/w40/kr.png" class="flag-icon flag-active"></a>
                     </li>
                 </ul>
             </div>
@@ -75,38 +89,37 @@
     <header class="hero-premium d-flex align-items-center">
         <div class="sky-overlay"></div>
         <div class="container hero-content text-center">
-            <span class="text-uppercase tracking-widest text-primary mb-2 d-block fw-bold">서울 본사 (SEOUL HQ)</span>
-            <h1 class="display-4 text-white fw-bold">상담 및 예약 문의</h1>
-            <p class="text-white-50">글로벌 모빌리티 솔루션 | 대표이사 와헤드 아메드 (Wahed Ahmed)</p>
+            <span class="text-uppercase tracking-widest text-warning mb-2 d-block fw-bold">서울 본사</span>
+            <h1 class="display-4 text-white fw-bold">상담 및 예약</h1>
+            <p class="text-white-50">글로벌 이동 솔루션 | 대표 와히드 아흐메드</p>
         </div>
     </header>
 
     <section class="py-5">
         <div class="container py-5">
             <div class="row g-5">
+                <!-- 연락처 정보 -->
                 <div class="col-md-5 reveal-hidden">
-                    <h2 class="fw-bold mb-4">사무실 방문 안내</h2>
-                    <p class="text-muted mb-5">대표이사 <strong>와헤드 아메드(Wahed Ahmed)</strong>와 저희 팀은 항공권, 비자 및 여권 관련 전문 컨설팅을 제공합니다.</p>
+                    <h2 class="fw-bold mb-4">사무실 방문</h2>
+                    <p class="text-muted mb-5"><strong>와히드 아흐메드</strong> 대표와 팀이 항공권, 비자, 여권 관련 전문 상담을 제공해 드립니다.</p>
                     
-                    <div class="contact-card p-4 bg-white shadow-sm mb-4 border-start border-primary border-4">
+                    <div class="contact-card p-4 bg-white shadow-sm mb-4 border-start border-warning border-4">
                         <div class="d-flex align-items-center mb-4">
-                            <i class="bi bi-geo-alt text-primary fs-4 me-3"></i>
+                            <i class="bi bi-geo-alt text-warning fs-4 me-3"></i>
                             <div>
                                 <h6 class="fw-bold mb-0">주소</h6>
-                                <p class="small text-muted mb-0">서울특별시 용산구 우사단로 10길 9 (04405)</p>
+                                <p class="small text-muted mb-0">서울시 용산구 우사단로10길 9</p>
                             </div>
                         </div>
-
                         <div class="d-flex align-items-center mb-4">
-                            <i class="bi bi-telephone text-primary fs-4 me-3"></i>
+                            <i class="bi bi-telephone text-warning fs-4 me-3"></i>
                             <div>
-                                <h6 class="fw-bold mb-0">연락처</h6>
-                                <p class="small text-muted mb-0">휴대폰: 010-2235-9673 | 전화: 02-794-9673</p>
+                                <h6 class="fw-bold mb-0">전화번호</h6>
+                                <p class="small text-muted mb-0">휴대: 010-2235-9673 | 유선: 02-794-9673</p>
                             </div>
                         </div>
-
                         <div class="d-flex align-items-center">
-                            <i class="bi bi-envelope text-primary fs-4 me-3"></i>
+                            <i class="bi bi-envelope text-warning fs-4 me-3"></i>
                             <div>
                                 <h6 class="fw-bold mb-0">이메일</h6>
                                 <p class="small text-muted mb-0">ettehad9673@gmail.com</p>
@@ -115,7 +128,7 @@
                     </div>
 
                     <div class="mt-4">
-                        <h6 class="fw-bold mb-3 tracking-widest small">SNS 연결</h6>
+                        <h6 class="fw-bold mb-3 tracking-widest small">SNS 채널</h6>
                         <div class="d-flex gap-3">
                             <a href="#" class="btn btn-outline-dark btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
                             <a href="#" class="btn btn-outline-dark btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
@@ -124,6 +137,7 @@
                     </div>
                 </div>
 
+                <!-- 폼 섹션 -->
                 <div class="col-md-7 reveal-hidden">
                     <div class="p-4 p-md-5 bg-white shadow-lg border-top border-primary border-4" id="formContainer">
                         <div class="progress mb-4" id="progressWrapper" style="height: 6px;">
@@ -132,24 +146,26 @@
 
                         <form id="contactForm">
                             <input type="hidden" name="access_key" value="b45d75ad-f429-41fd-989f-6a7ebab6e764">
-                            <input type="hidden" name="from_name" value="이태하드 여행사 웹사이트">
-                            <input type="hidden" name="subject" value="새로운 문의 접수 - 이태하드 서울">
-
+                            
+                            <!-- 1단계 -->
                             <div class="step" id="step1">
-                                <span class="step-title fw-bold text-uppercase d-block mb-2">1단계: 기본 정보</span>
-                                <h4 class="fw-bold mb-4">여행자 정보를 입력해주세요</h4>
+                                <span class="step-title fw-bold text-uppercase d-block mb-2">1단계: 본인 확인</span>
+                                <h4 class="fw-bold mb-4">여행자 정보를 입력하세요</h4>
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <label class="small fw-bold text-muted mb-1">성함 (FULL NAME)</label>
-                                        <input type="text" name="name" id="cust_name" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="성함을 입력하세요" required>
+                                        <label class="small fw-bold text-muted mb-1">성명</label>
+                                        <input type="text" name="name" id="cust_name" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="이름 입력" required>
+                                        <div class="invalid-feedback-custom">이름을 입력해 주세요.</div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="small fw-bold text-muted mb-1">연락처 (PHONE)</label>
+                                        <label class="small fw-bold text-muted mb-1">전화번호</label>
                                         <input type="tel" name="phone" id="cust_phone" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="010-XXXX-XXXX" required>
+                                        <div class="invalid-feedback-custom">전화번호를 입력해 주세요.</div>
                                     </div>
                                     <div class="col-12">
-                                        <label class="small fw-bold text-muted mb-1">이메일 주소 (EMAIL)</label>
-                                        <input type="email" name="email" id="cust_email" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="답변을 받을 이메일" required>
+                                        <label class="small fw-bold text-muted mb-1">이메일 주소</label>
+                                        <input type="email" name="email" id="cust_email" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="답변받을 이메일" required>
+                                        <div class="invalid-feedback-custom">유효한 이메일을 입력해 주세요.</div>
                                     </div>
                                     <div class="col-12 mt-4">
                                         <button type="button" class="btn btn-primary w-100 py-3 fw-bold rounded-0 next-btn">다음: 서비스 선택</button>
@@ -157,77 +173,119 @@
                                 </div>
                             </div>
 
+                            <!-- 2단계 -->
                             <div class="step d-none" id="step2">
-                                <span class="step-title fw-bold text-uppercase d-block mb-2">2단계: 서비스 선택</span>
-                                <h4 class="fw-bold mb-4">도움이 필요하신 서비스는 무엇인가요?</h4>
+                                <span class="step-title fw-bold text-uppercase d-block mb-2">2단계: 서비스</span>
+                                <h4 class="fw-bold mb-4">어떤 도움이 필요하신가요?</h4>
                                 <div class="row g-3">
                                     <div class="col-sm-6">
                                         <div class="selection-card p-4 text-center h-100" onclick="selectService('Visa')">
-                                            <i class="bi bi-passport text-primary display-6"></i>
+                                            <i class="bi bi-passport text-warning display-6"></i>
                                             <h6 class="fw-bold mt-3">비자 서비스</h6>
                                             <p class="small text-muted mb-0">관광, 유학, 취업 비자</p>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="selection-card p-4 text-center h-100" onclick="selectService('Flight')">
-                                            <i class="bi bi-airplane text-primary display-6"></i>
+                                            <i class="bi bi-airplane text-warning display-6"></i>
                                             <h6 class="fw-bold mt-3">항공권 예약</h6>
-                                            <p class="small text-muted mb-0">프리미엄 및 이코노미 티켓</p>
+                                            <p class="small text-muted mb-0">비즈니스 및 이코노미 항공권</p>
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex gap-2 mt-4">
                                         <button type="button" class="btn btn-light border py-3 w-50 fw-bold rounded-0 prev-btn">이전</button>
-                                        <button type="button" class="btn btn-primary py-3 w-50 fw-bold rounded-0 next-btn">다음: 상세 정보</button>
+                                        <button type="button" class="btn btn-primary py-3 w-50 fw-bold rounded-0 next-btn">다음: 상세 입력</button>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- 3단계 -->
                             <div class="step d-none" id="step3">
                                 <span class="step-title fw-bold text-uppercase d-block mb-2">3단계: 상세 정보</span>
-                                <h4 class="fw-bold mb-4" id="dynamicTitle">상세 정보 입력</h4>
+                                <h4 class="fw-bold mb-4" id="dynamicTitle">여행 상세 정보</h4>
                                 <div class="row g-3">
                                     <div class="col-12">
                                         <label class="small fw-bold text-muted mb-1">목적지 국가</label>
                                         <input type="text" name="destination" id="dest_country" class="form-control border-0 bg-light p-3 shadow-none validate-me" placeholder="예: 영국, 캐나다, UAE" required>
+                                        <div class="invalid-feedback-custom">목적지를 입력해 주세요.</div>
                                     </div>
-                                    
+
+                                    <!-- 비자 전용 필드 -->
                                     <div id="visaFields" class="row g-3 d-none m-0 p-0">
                                         <div class="col-md-6">
-                                            <label class="small fw-bold text-muted mb-1">비자 종류</label>
-                                            <select name="visa_type" id="visa_type" class="form-select border-0 bg-light p-3 shadow-none">
-                                                <option>관광 (Tourist)</option>
-                                                <option>비즈니스 (Business)</option>
-                                                <option>유학 (Student)</option>
+                                            <label class="small fw-bold text-muted mb-1">비자 유형</label>
+                                            <select name="visa_type" class="form-select border-0 bg-light p-3 shadow-none">
+                                                <option>관광비자</option>
+                                                <option>비즈니스비자</option>
+                                                <option>유학비자</option>
+                                                <option>취업비자</option>
                                             </select>
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="small fw-bold text-muted mb-1">여권 상태</label>
-                                            <input type="text" name="passport_status" id="passport_status" class="form-control border-0 bg-light p-3 shadow-none" placeholder="유효함/만료됨">
+                                            <label class="small fw-bold text-muted mb-1">비자 구분</label>
+                                            <input type="text" name="visa_category" class="form-control border-0 bg-light p-3 shadow-none" placeholder="단수/복수 입국">
                                         </div>
                                     </div>
 
+                                    <!-- 항공권 전용 필드 -->
                                     <div id="flightFields" class="row g-3 d-none m-0 p-0">
+                                        <!-- 여행 유형: 편도 / 왕복 -->
+                                        <div class="col-12">
+                                            <label class="small fw-bold text-muted mb-2 d-block">여행 유형</label>
+                                            <div class="row g-2">
+                                                <div class="col-6">
+                                                    <div class="trip-card active" id="tripOneWay" onclick="selectTripType('One Way')">
+                                                        <i class="bi bi-arrow-right trip-icon d-block mb-1"></i>
+                                                        <span class="trip-label">편도</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="trip-card" id="tripTwoWay" onclick="selectTripType('Two Way')">
+                                                        <i class="bi bi-arrow-left-right trip-icon d-block mb-1"></i>
+                                                        <span class="trip-label">왕복</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="col-md-6">
                                             <label class="small fw-bold text-muted mb-1">출발 도시</label>
-                                            <input type="text" name="departure_city" id="dept_city" class="form-control border-0 bg-light p-3 shadow-none" placeholder="예: 서울/인천">
+                                            <input type="text" name="departure_city" class="form-control border-0 bg-light p-3 shadow-none" placeholder="예: 서울">
                                         </div>
                                         <div class="col-md-6">
+                                            <label class="small fw-bold text-muted mb-1">도착 도시</label>
+                                            <input type="text" name="arrival_city" class="form-control border-0 bg-light p-3 shadow-none" placeholder="예: 런던">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="small fw-bold text-muted mb-1">출발일</label>
+                                            <input type="date" name="departure_date" id="pref_date" class="form-control border-0 bg-light p-3 shadow-none">
+                                        </div>
+
+                                        <!-- 귀국일 — 왕복 선택 시에만 표시 -->
+                                        <div class="col-md-6 return-date-wrapper" id="returnDateWrapper">
+                                            <label class="small fw-bold text-muted mb-1">귀국일 <span class="text-danger">*</span></label>
+                                            <input type="date" name="return_date" id="return_date" class="form-control border-0 bg-light p-3 shadow-none validate-me">
+                                            <div class="invalid-feedback-custom">왕복 여행의 경우 귀국일을 입력해야 합니다.</div>
+                                        </div>
+
+                                        <div class="col-md-6">
                                             <label class="small fw-bold text-muted mb-1">좌석 등급</label>
-                                            <select name="flight_class" id="flight_class" class="form-select border-0 bg-light p-3 shadow-none">
-                                                <option>이코노미 (Economy)</option>
-                                                <option>비즈니스 (Business)</option>
+                                            <select name="flight_class" class="form-select border-0 bg-light p-3 shadow-none">
+                                                <option>이코노미</option>
+                                                <option>비즈니스</option>
+                                                <option>일등석</option>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="col-12">
-                                        <label class="small fw-bold text-muted mb-1">희망 여행 날짜</label>
-                                        <input type="date" name="preferred_date" id="pref_date" class="form-control border-0 bg-light p-3 shadow-none validate-me" required>
+                                        <label class="small fw-bold text-muted mb-1">추가 문의 사항</label>
+                                        <textarea name="message" id="message" class="form-control border-0 bg-light p-3 shadow-none" rows="3" placeholder="문의 내용을 입력하세요..."></textarea>
                                     </div>
 
                                     <div class="col-12 d-flex gap-2 mt-4">
                                         <button type="button" class="btn btn-light border py-3 w-50 fw-bold rounded-0 prev-btn">이전</button>
-                                        <button type="submit" id="submitBtn" class="btn btn-success py-3 w-50 fw-bold rounded-0">서울 지사에 제출</button>
+                                        <button type="submit" id="submitBtn" class="btn btn-success py-3 w-50 fw-bold rounded-0">문의 보내기</button>
                                     </div>
                                 </div>
                             </div>
@@ -237,8 +295,8 @@
                             <div class="mb-4">
                                 <i class="bi bi-check-circle-fill success-icon"></i>
                             </div>
-                            <h3 class="fw-bold mb-2">접수 완료!</h3>
-                            <p class="text-muted mb-4">이태하드 여행사를 선택해 주셔서 감사합니다. 귀하의 문의가 서울 사무소로 전송되었습니다. 곧 연락드리겠습니다.</p>
+                            <h3 class="fw-bold mb-2">문의가 접수되었습니다!</h3>
+                            <p class="text-muted mb-4">서울 본사로 문의가 전송되었습니다. 담당자가 곧 연락드리겠습니다.</p>
                             <button onclick="location.reload()" class="btn btn-outline-primary px-4 rounded-0 fw-bold">확인</button>
                         </div>
                     </div>
@@ -247,34 +305,40 @@
         </div>
     </section>
 
+    <!-- 지도 섹션 -->
+    <div class="container-fluid px-0 reveal-hidden">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.484197415494!2d126.9930!3d37.5340!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2367d36391d%3A0xc3049b4c02f74154!2sUsadan-ro%2010-gil%2C%20Yongsan-gu%2C%20Seoul!5e0!3m2!1sen!2skr!4v1710000000000" 
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
     <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h5 class="fw-bold mb-4">이태하드 <span class="text-primary">여행사</span></h5>
-                    <p class="text-white-50 small">(주) 이태하드인터내셔널. 2010년부터 함께해온 글로벌 모빌리티 파트너입니다.</p>
-                    <p class="text-white-50 small"><strong>사업자 등록번호:</strong> 106-86-71210</p>
+                    <h5 class="fw-bold mb-4">ETTEHAD <span class="text-warning">TRAVELS</span></h5>
+                    <p class="text-white-50 small">(주) 이태하드인터내셔널 라이선스 하에 운영. 2010년부터 글로벌 이동 파트너.</p>
+                    <p class="text-white-50 small"><strong>사업자등록번호:</strong> 106-86-71210</p>
                 </div>
                 <div class="col-md-2 mb-4">
-                    <h6 class="fw-bold mb-4">빠른 링크</h6>
+                    <h6 class="fw-bold mb-4">바로가기</h6>
                     <ul class="list-unstyled small">
                         <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">홈</a></li>
                         <li class="mb-2"><a href="visa.html" class="text-white-50 text-decoration-none">비자</a></li>
                         <li class="mb-2"><a href="booking.html" class="text-white-50 text-decoration-none">예약</a></li>
-                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">회사 소개</a></li>
-                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">문의하기</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">소개</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">문의</a></li>
                     </ul>
                 </div>
                 <div class="col-md-5 mb-4 ms-auto">
-                    <h6 class="fw-bold mb-4">서울 사무소</h6>
-                    <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 서울특별시 용산구 우사단로 10길 9, 04405</p>
-                    <p class="text-white-50 small mb-2"><i class="bi bi-telephone me-2 text-primary"></i> 02-794-9673 | 010-2235-9673</p>
-                    <p class="text-white-50 small"><i class="bi bi-envelope me-2 text-primary"></i> ettehad9673@gmail.com</p>
+                    <h6 class="fw-bold mb-4">서울 사무실</h6>
+                    <p class="text-white-50 small mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i> 서울시 용산구 우사단로10길 9, 04405</p>
+                    <p class="text-white-50 small mb-2"><i class="bi bi-telephone me-2 text-warning"></i> 02-794-9673 | 010-2235-9673</p>
+                    <p class="text-white-50 small"><i class="bi bi-envelope me-2 text-warning"></i> ettehad9673@gmail.com</p>
                 </div>
             </div>
             <hr class="border-secondary">
             <div class="text-center text-white-50 small">
-                <p class="mb-0">© 2026 이태하드 여행사 서울 (Ettehad Travels Seoul). All Rights Reserved.</p>
+                <p class="mb-0">&copy; 2026 이태하드 트래블 서울. 모든 권리 보유.</p>
             </div>
         </div>
     </footer>
@@ -282,7 +346,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script type="module">
-        // Firebase code and logic stays same, only translated messages in UI
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -304,6 +367,7 @@
         const progress = document.getElementById("formProgress");
         let currentStep = 0;
         let selectedService = "";
+        let selectedTripType = "One Way";
 
         function validateStep() {
             let isValid = true;
@@ -316,10 +380,41 @@
                     input.classList.remove("is-invalid");
                 }
             });
+
+            // 1단계: 이메일 형식 확인
+            if (currentStep === 0) {
+                const emailInput = document.getElementById('cust_email');
+                if (emailInput.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+                    emailInput.classList.add("is-invalid");
+                    emailInput.nextElementSibling.textContent = "유효한 이메일 주소를 입력해 주세요.";
+                    isValid = false;
+                }
+            }
+
+            // 2단계: 서비스 선택 확인
             if (currentStep === 1 && selectedService === "") {
-                alert("서비스(비자 또는 항공권)를 선택해 주세요.");
+                alert("계속하려면 서비스를 선택해 주세요.");
                 isValid = false;
             }
+
+            // 3단계: 항공권 왕복 귀국일 확인
+            if (currentStep === 2 && selectedService === 'Flight' && selectedTripType === 'Two Way') {
+                const returnDate = document.getElementById('return_date');
+                if (!returnDate.value.trim()) {
+                    returnDate.classList.add("is-invalid");
+                    isValid = false;
+                } else {
+                    returnDate.classList.remove("is-invalid");
+                }
+                // 귀국일이 출발일 이후인지 확인
+                const depDate = document.getElementById('pref_date');
+                if (depDate.value && returnDate.value && returnDate.value <= depDate.value) {
+                    returnDate.classList.add("is-invalid");
+                    returnDate.nextElementSibling.textContent = "귀국일은 출발일 이후여야 합니다.";
+                    isValid = false;
+                }
+            }
+
             return isValid;
         }
 
@@ -353,9 +448,11 @@
             selectedService = type;
             document.querySelectorAll('.selection-card').forEach(card => card.classList.remove('active'));
             event.currentTarget.classList.add('active');
+            
             const visaFields = document.getElementById('visaFields');
             const flightFields = document.getElementById('flightFields');
             const dynamicTitle = document.getElementById('dynamicTitle');
+            
             if (type === 'Visa') {
                 visaFields.classList.remove('d-none');
                 flightFields.classList.add('d-none');
@@ -364,59 +461,123 @@
                 flightFields.classList.remove('d-none');
                 visaFields.classList.add('d-none');
                 dynamicTitle.innerText = "항공권 예약 상세 정보";
+                selectTripType('One Way');
+            }
+        }
+
+        window.selectTripType = function(type) {
+            selectedTripType = type;
+            const oneWayCard = document.getElementById('tripOneWay');
+            const twoWayCard = document.getElementById('tripTwoWay');
+            const returnDateWrapper = document.getElementById('returnDateWrapper');
+            const returnDateInput = document.getElementById('return_date');
+
+            if (type === 'One Way') {
+                oneWayCard.classList.add('active');
+                twoWayCard.classList.remove('active');
+                returnDateWrapper.classList.remove('show');
+                returnDateInput.removeAttribute('required');
+                returnDateInput.value = '';
+                returnDateInput.classList.remove('is-invalid');
+            } else {
+                twoWayCard.classList.add('active');
+                oneWayCard.classList.remove('active');
+                returnDateWrapper.classList.add('show');
+                returnDateInput.setAttribute('required', 'true');
             }
         }
 
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+
+            // 왕복 귀국일 최종 확인
+            if (selectedService === 'Flight' && selectedTripType === 'Two Way') {
+                const returnDate = document.getElementById('return_date');
+                if (!returnDate.value.trim()) {
+                    returnDate.classList.add("is-invalid");
+                    return;
+                }
+                const depDate = document.getElementById('pref_date');
+                if (depDate.value && returnDate.value <= depDate.value) {
+                    returnDate.classList.add("is-invalid");
+                    returnDate.nextElementSibling.textContent = "귀국일은 출발일 이후여야 합니다.";
+                    return;
+                }
+            }
+
             const submitBtn = document.getElementById('submitBtn');
-            const formElement = e.target;
-            const progressWrapper = document.getElementById('progressWrapper');
-            const successScreen = document.getElementById('successScreen');
-            
             submitBtn.disabled = true;
             submitBtn.innerText = "전송 중...";
 
-            const formData = new FormData(formElement);
+            const formData = new FormData(this);
             formData.append("Selected_Service", selectedService);
+            formData.append("Trip_Type", selectedTripType);
 
             try {
-                const firestoreData = {
+                const firebaseData = {
                     fullName: document.getElementById('cust_name').value,
                     phone: document.getElementById('cust_phone').value,
                     email: document.getElementById('cust_email').value,
-                    serviceType: selectedService || "General Inquiry",
+                    service: selectedService,
                     destination: document.getElementById('dest_country').value,
-                    preferredDate: document.getElementById('pref_date').value,
                     submittedAt: serverTimestamp()
                 };
 
-                await addDoc(collection(db, "contact_inquiries"), firestoreData);
+                if (selectedService === 'Flight') {
+                    firebaseData.tripType = selectedTripType;
+                    const depCity = document.querySelector('[name="departure_city"]').value;
+                    const arrCity = document.querySelector('[name="arrival_city"]').value;
+                    const depDate = document.getElementById('pref_date').value;
+                    const flightClass = document.querySelector('[name="flight_class"]').value;
+                    if (depCity) firebaseData.departureCity = depCity;
+                    if (arrCity) firebaseData.arrivalCity = arrCity;
+                    if (depDate) firebaseData.departureDate = depDate;
+                    if (flightClass) firebaseData.flightClass = flightClass;
+                    if (selectedTripType === 'Two Way') {
+                        firebaseData.returnDate = document.getElementById('return_date').value;
+                    }
+                }
+
+                if (selectedService === 'Visa') {
+                    const visaType = document.querySelector('[name="visa_type"]').value;
+                    const visaCat = document.querySelector('[name="visa_category"]').value;
+                    if (visaType) firebaseData.visaType = visaType;
+                    if (visaCat) firebaseData.visaCategory = visaCat;
+                }
+
+                const message = document.getElementById('message').value;
+                if (message) firebaseData.message = message;
+
+                await addDoc(collection(db, "contact_inquiries"), firebaseData);
 
                 const object = Object.fromEntries(formData);
                 const response = await fetch("https://api.web3forms.com/submit", {
                     method: "POST",
-                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(object)
                 });
 
                 if (response.ok) {
-                    formElement.classList.add('d-none');
-                    progressWrapper.classList.add('d-none');
-                    successScreen.classList.remove('d-none');
-                } else {
-                    alert("정보는 저장되었으나 알림 전송에 실패했습니다. 곧 연락드리겠습니다.");
-                    location.reload();
+                    document.getElementById('contactForm').classList.add('d-none');
+                    document.getElementById('progressWrapper').classList.add('d-none');
+                    document.getElementById('successScreen').classList.remove('d-none');
                 }
-
             } catch (error) {
-                console.error("Error:", error);
-                alert("문제가 발생했습니다. 인터넷 연결을 확인해 주세요.");
+                console.error(error);
+                alert("전송 중 오류가 발생했습니다. 다시 시도해 주세요.");
                 submitBtn.disabled = false;
-                submitBtn.innerText = "서울 지사에 제출";
+                submitBtn.innerText = "문의 보내기";
             }
         });
 
+        // 입력 시 오류 상태 제거
+        document.querySelectorAll('.validate-me').forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('is-invalid');
+            });
+        });
+
+        // 스크롤 애니메이션
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('reveal-visible');
