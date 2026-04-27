@@ -97,34 +97,48 @@ h1, h2, .display-2 {
 /* Airplane Animation (Fully Restored) */
 .airplane-container {
     position: absolute;
-    top: 35%;
-    left: -10%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
     z-index: 2;
-    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
-    animation: luxury-flight 45s linear infinite;
-    pointer-events: none; /* Keeps buttons clickable */
 }
 
 .airplane {
-    width: 450px; /* Pehle 250px tha, ab thora bara kar diya hy */
-    opacity: 0.5; /* Background mein hy is liye thori opacity kam rakhi hy taake text saaf dikhe */
-    transform: scaleX(-1); /* Plane ko seedha rakhne ke liye */
-}
+    position: absolute;
+    top: 40%;
+    left: -150px;
+    width: 350px;
+    opacity: 0.9;
 
-@keyframes luxury-flight {
-    0% { 
-        left: -35%; /* Start thora aur piche se hoga kyunke plane bara hy */
-        transform: translateY(0) scaleX(-1) rotate(0deg); 
+    /* FAKE FRONT LOOK */
+    transform: rotateY(65deg) rotateX(8deg);
+
+    animation: zigzagFlight 14s linear infinite;
+
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
+@keyframes zigzagFlight {
+    0% {
+        transform: translate(-150px, 50px) scaleX(1) rotate(0deg);
     }
-    50% { 
-        transform: translateY(-30px) scaleX(-1) rotate(-2deg); 
+    20% {
+        transform: translate(20vw, -60px) scaleX(1) rotate(0deg);
     }
-    100% { 
-        left: 120%; /* Khatam bhi screen se kafi agay ja kar hoga */
-        transform: translateY(-10px) scaleX(-1) rotate(0deg); 
+    40% {
+        transform: translate(40vw, 60px) scaleX(1) rotate(0deg);
+    }
+    60% {
+        transform: translate(60vw, -40px) scaleX(1) rotate(0deg);
+    }
+    80% {
+        transform: translate(80vw, 40px) scaleX(1) rotate(0deg);
+    }
+    100% {
+        transform: translate(110vw, 0px) scaleX(1) rotate(0deg);
     }
 }
-
 /* --- BUTTONS & TYPOGRAPHY (Step 2: Smooth Lift) --- */
 .btn-primary {
     background-color: var(--primary-gold) !important;
