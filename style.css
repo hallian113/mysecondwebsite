@@ -106,14 +106,23 @@ h1, h2, .display-2 {
 }
 
 .airplane {
-    width: 250px;
-    opacity: 0.6;
+    width: 450px; /* Pehle 250px tha, ab thora bara kar diya hy */
+    opacity: 0.5; /* Background mein hy is liye thori opacity kam rakhi hy taake text saaf dikhe */
+    transform: scaleX(-1); /* Plane ko seedha rakhne ke liye */
 }
 
 @keyframes luxury-flight {
-    0% { left: -20%; transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-30px) rotate(2deg); }
-    100% { left: 110%; transform: translateY(-10px) rotate(-1deg); }
+    0% { 
+        left: -35%; /* Start thora aur piche se hoga kyunke plane bara hy */
+        transform: translateY(0) scaleX(-1) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-30px) scaleX(-1) rotate(-2deg); 
+    }
+    100% { 
+        left: 120%; /* Khatam bhi screen se kafi agay ja kar hoga */
+        transform: translateY(-10px) scaleX(-1) rotate(0deg); 
+    }
 }
 
 /* --- BUTTONS & TYPOGRAPHY (Step 2: Smooth Lift) --- */
